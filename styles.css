@@ -36,7 +36,7 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 header h1 {
@@ -48,6 +48,39 @@ header h1 {
 header p {
     color: #6b7280;
     font-size: 1.1em;
+}
+
+/* Level Toolbar */
+.level-toolbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.level-btn {
+    padding: 12px 25px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-btn:hover {
+    background: var(--neutral-light);
+    transform: translateY(-2px);
+}
+
+.level-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 .screen {
@@ -70,6 +103,12 @@ header p {
 }
 
 /* Quiz Selection */
+#quizSelection h2 {
+    color: var(--neutral-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .quiz-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -332,6 +371,14 @@ header p {
 
     .btn {
         flex: none;
+        width: 100%;
+    }
+
+    .level-toolbar {
+        flex-direction: column;
+    }
+
+    .level-btn {
         width: 100%;
     }
 }
