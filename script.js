@@ -19,134 +19,10 @@ function typewriterEffect(elementId, text, speed = 100) {
 
 // Quiz Data - Organized by Easy and Difficult levels
 const quizzes = [
-    // EASY QUIZZES
+    // EASY QUIZZES - 100 English Grammar Questions
     {
         level: 'easy',
-        title: "General Knowledge",
-        questions: [
-            {
-                question: "What is the capital of France?",
-                options: ["London", "Berlin", "Paris", "Madrid"],
-                correct: 2
-            },
-            {
-                question: "Which planet is known as the Red Planet?",
-                options: ["Venus", "Mars", "Jupiter", "Saturn"],
-                correct: 1
-            },
-            {
-                question: "What is the largest ocean on Earth?",
-                options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
-                correct: 2
-            },
-            {
-                question: "Who painted the Mona Lisa?",
-                options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-                correct: 1
-            },
-            {
-                question: "What is the smallest country in the world?",
-                options: ["Monaco", "Vatican City", "Liechtenstein", "San Marino"],
-                correct: 1
-            }
-        ]
-    },
-    {
-        level: 'easy',
-        title: "Science",
-        questions: [
-            {
-                question: "What is the chemical symbol for gold?",
-                options: ["Go", "Gd", "Au", "Ag"],
-                correct: 2
-            },
-            {
-                question: "What is the speed of light?",
-                options: ["300,000 km/s", "150,000 km/s", "450,000 km/s", "200,000 km/s"],
-                correct: 0
-            },
-            {
-                question: "How many bones are in the human body?",
-                options: ["186", "206", "226", "246"],
-                correct: 1
-            },
-            {
-                question: "What gas do plants absorb from the atmosphere?",
-                options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-                correct: 2
-            },
-            {
-                question: "What is the most abundant element in the universe?",
-                options: ["Oxygen", "Hydrogen", "Nitrogen", "Carbon"],
-                correct: 1
-            }
-        ]
-    },
-    {
-        level: 'easy',
-        title: "History",
-        questions: [
-            {
-                question: "In what year did World War II end?",
-                options: ["1943", "1944", "1945", "1946"],
-                correct: 2
-            },
-            {
-                question: "Who was the first President of the United States?",
-                options: ["Thomas Jefferson", "George Washington", "Benjamin Franklin", "John Adams"],
-                correct: 1
-            },
-            {
-                question: "In what year did the Titanic sink?",
-                options: ["1910", "1911", "1912", "1913"],
-                correct: 2
-            },
-            {
-                question: "Which empire built the Great Wall of China?",
-                options: ["Japanese Empire", "Roman Empire", "Chinese Empire", "Mongol Empire"],
-                correct: 2
-            },
-            {
-                question: "In what year did the Berlin Wall fall?",
-                options: ["1987", "1988", "1989", "1990"],
-                correct: 2
-            }
-        ]
-    },
-    {
-        level: 'easy',
-        title: "Geography",
-        questions: [
-            {
-                question: "What is the capital of Australia?",
-                options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-                correct: 2
-            },
-            {
-                question: "Which is the longest river in the world?",
-                options: ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
-                correct: 1
-            },
-            {
-                question: "How many continents are there?",
-                options: ["5", "6", "7", "8"],
-                correct: 2
-            },
-            {
-                question: "What is the capital of Japan?",
-                options: ["Osaka", "Tokyo", "Kyoto", "Hiroshima"],
-                correct: 1
-            },
-            {
-                question: "Which country is home to the Eiffel Tower?",
-                options: ["Germany", "Italy", "France", "Spain"],
-                correct: 2
-            }
-        ]
-    },
-    {
-        level: 'easy',
-        title: "English Grammar",
+        title: "English Grammar (100 Questions)",
         questions: [
             {
                 question: "1. The crowd _____ cheering loudly when the goal was scored.",
@@ -247,6 +123,406 @@ const quizzes = [
                 question: "20. She runs _____ than anyone else on the team.",
                 options: ["more fast", "faster", "more faster"],
                 correct: 1
+            },
+            {
+                question: "21. I have been waiting _____ three hours.",
+                options: ["for", "during", "since"],
+                correct: 0
+            },
+            {
+                question: "22. He will arrive _____ tomorrow morning.",
+                options: ["at", "on", "in"],
+                correct: 1
+            },
+            {
+                question: "23. _____ you finished your homework?",
+                options: ["Did", "Have", "Had"],
+                correct: 1
+            },
+            {
+                question: "24. She _____ been here for an hour.",
+                options: ["has", "have", "had"],
+                correct: 0
+            },
+            {
+                question: "25. They are _____ to the cinema tonight.",
+                options: ["go", "going", "gone"],
+                correct: 1
+            },
+            {
+                question: "26. The book _____ on the table.",
+                options: ["is", "are", "been"],
+                correct: 0
+            },
+            {
+                question: "27. I _____ never seen such a beautiful sunset.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "28. _____ is your favorite color?",
+                options: ["What", "Which", "That"],
+                correct: 0
+            },
+            {
+                question: "29. She doesn't like _____ vegetables.",
+                options: ["eat", "eating", "eaten"],
+                correct: 1
+            },
+            {
+                question: "30. We _____ to the beach every summer.",
+                options: ["goes", "go", "going"],
+                correct: 1
+            },
+            {
+                question: "31. The _____ is sleeping.",
+                options: ["cat", "cats", "catz"],
+                correct: 0
+            },
+            {
+                question: "32. _____ apples do you want?",
+                options: ["How much", "How many", "How"],
+                correct: 1
+            },
+            {
+                question: "33. He _____ coffee every morning.",
+                options: ["drinks", "drink", "drinking"],
+                correct: 0
+            },
+            {
+                question: "34. I will _____ you tomorrow.",
+                options: ["calling", "call", "called"],
+                correct: 1
+            },
+            {
+                question: "35. She _____ a good student.",
+                options: ["am", "is", "are"],
+                correct: 1
+            },
+            {
+                question: "36. They have _____ living here for five years.",
+                options: ["been", "being", "be"],
+                correct: 0
+            },
+            {
+                question: "37. _____ you like pizza?",
+                options: ["Do", "Does", "Did"],
+                correct: 0
+            },
+            {
+                question: "38. She is _____ than me.",
+                options: ["tall", "taller", "tallest"],
+                correct: 1
+            },
+            {
+                question: "39. I can _____ English very well.",
+                options: ["speak", "speaking", "spoke"],
+                correct: 0
+            },
+            {
+                question: "40. They _____ finished their project.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "41. What _____ you doing now?",
+                options: ["are", "is", "am"],
+                correct: 0
+            },
+            {
+                question: "42. She will be _____ at the party.",
+                options: ["there", "their", "they're"],
+                correct: 0
+            },
+            {
+                question: "43. I _____ not understand this problem.",
+                options: ["do", "does", "did"],
+                correct: 0
+            },
+            {
+                question: "44. He _____ been to Paris twice.",
+                options: ["have", "has", "had"],
+                correct: 1
+            },
+            {
+                question: "45. _____ is that girl?",
+                options: ["Who", "Whom", "Whose"],
+                correct: 0
+            },
+            {
+                question: "46. The dog _____ the ball.",
+                options: ["chase", "chases", "chased"],
+                correct: 1
+            },
+            {
+                question: "47. I have to _____ my homework.",
+                options: ["do", "doing", "done"],
+                correct: 0
+            },
+            {
+                question: "48. She _____ a dress yesterday.",
+                options: ["buys", "buy", "bought"],
+                correct: 2
+            },
+            {
+                question: "49. They are _____ interesting book.",
+                options: ["read", "reading", "reads"],
+                correct: 1
+            },
+            {
+                question: "50. I _____ know what to do.",
+                options: ["don't", "doesn't", "didn't"],
+                correct: 0
+            },
+            {
+                question: "51. She is _____ the phone right now.",
+                options: ["on", "in", "at"],
+                correct: 0
+            },
+            {
+                question: "52. We _____ play football after school.",
+                options: ["is", "are", "will"],
+                correct: 2
+            },
+            {
+                question: "53. _____ you finished your meal?",
+                options: ["Have", "Has", "Had"],
+                correct: 0
+            },
+            {
+                question: "54. The book _____ to me.",
+                options: ["belong", "belongs", "belonging"],
+                correct: 1
+            },
+            {
+                question: "55. I _____ a new car last month.",
+                options: ["bought", "buy", "buying"],
+                correct: 0
+            },
+            {
+                question: "56. She _____ to go to the store.",
+                options: ["want", "wants", "wanting"],
+                correct: 1
+            },
+            {
+                question: "57. They _____ been working since morning.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "58. I _____ never tried Italian food.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "59. He _____ to study harder for exams.",
+                options: ["need", "needs", "needing"],
+                correct: 1
+            },
+            {
+                question: "60. _____ you like ice cream?",
+                options: ["Do", "Does", "Did"],
+                correct: 0
+            },
+            {
+                question: "61. She is _____ at home today.",
+                options: ["stay", "staying", "stays"],
+                correct: 1
+            },
+            {
+                question: "62. The _____ is very expensive.",
+                options: ["car", "cars", "cars'"],
+                correct: 0
+            },
+            {
+                question: "63. I will _____ you next week.",
+                options: ["see", "seeing", "saw"],
+                correct: 0
+            },
+            {
+                question: "64. They _____ to the movies yesterday.",
+                options: ["go", "goes", "went"],
+                correct: 2
+            },
+            {
+                question: "65. She _____ been here for two days.",
+                options: ["have", "has", "had"],
+                correct: 1
+            },
+            {
+                question: "66. I _____ my keys.",
+                options: ["lose", "losing", "lost"],
+                correct: 2
+            },
+            {
+                question: "67. He is _____ tall.",
+                options: ["very", "much", "so much"],
+                correct: 0
+            },
+            {
+                question: "68. _____ you help me with this?",
+                options: ["Can", "Cans", "Could"],
+                correct: 0
+            },
+            {
+                question: "69. The weather _____ rainy today.",
+                options: ["is", "are", "been"],
+                correct: 0
+            },
+            {
+                question: "70. I _____ to Paris last summer.",
+                options: ["go", "goes", "went"],
+                correct: 2
+            },
+            {
+                question: "71. She _____ a beautiful voice.",
+                options: ["have", "has", "had"],
+                correct: 1
+            },
+            {
+                question: "72. They _____ playing football.",
+                options: ["are", "is", "am"],
+                correct: 0
+            },
+            {
+                question: "73. I _____ already eaten lunch.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "74. He _____ to the gym every day.",
+                options: ["goes", "go", "going"],
+                correct: 0
+            },
+            {
+                question: "75. _____ is your address?",
+                options: ["What", "Where", "Which"],
+                correct: 1
+            },
+            {
+                question: "76. She _____ her homework before dinner.",
+                options: ["finish", "finishes", "finished"],
+                correct: 1
+            },
+            {
+                question: "77. I _____ understand the lesson.",
+                options: ["don't", "doesn't", "didn't"],
+                correct: 0
+            },
+            {
+                question: "78. They _____ sleeping when I called.",
+                options: ["were", "was", "are"],
+                correct: 0
+            },
+            {
+                question: "79. She _____ never been to London.",
+                options: ["have", "has", "had"],
+                correct: 1
+            },
+            {
+                question: "80. I _____ buy groceries tomorrow.",
+                options: ["will", "am", "are"],
+                correct: 0
+            },
+            {
+                question: "81. He _____ a new job last month.",
+                options: ["get", "gets", "got"],
+                correct: 2
+            },
+            {
+                question: "82. The _____ are playing in the park.",
+                options: ["children", "childs", "child"],
+                correct: 0
+            },
+            {
+                question: "83. I _____ been waiting for you.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "84. She is _____ the window.",
+                options: ["by", "at", "near"],
+                correct: 2
+            },
+            {
+                question: "85. _____ you ever traveled abroad?",
+                options: ["Have", "Has", "Had"],
+                correct: 0
+            },
+            {
+                question: "86. I _____ a sandwich for lunch.",
+                options: ["eat", "eating", "ate"],
+                correct: 2
+            },
+            {
+                question: "87. They _____ finished their work.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "88. She _____ very intelligent.",
+                options: ["am", "is", "are"],
+                correct: 1
+            },
+            {
+                question: "89. I will _____ you tonight.",
+                options: ["call", "calling", "called"],
+                correct: 0
+            },
+            {
+                question: "90. He _____ to go home.",
+                options: ["want", "wants", "wanting"],
+                correct: 1
+            },
+            {
+                question: "91. The _____ is mine.",
+                options: ["pen", "pens", "pens'"],
+                correct: 0
+            },
+            {
+                question: "92. I _____ not like mushrooms.",
+                options: ["do", "does", "did"],
+                correct: 0
+            },
+            {
+                question: "93. She _____ been working here for five years.",
+                options: ["have", "has", "had"],
+                correct: 1
+            },
+            {
+                question: "94. They are _____ very excited.",
+                options: ["all", "very", "so"],
+                correct: 0
+            },
+            {
+                question: "95. I _____ my car yesterday.",
+                options: ["wash", "washed", "washing"],
+                correct: 1
+            },
+            {
+                question: "96. He _____ a doctor.",
+                options: ["am", "is", "are"],
+                correct: 1
+            },
+            {
+                question: "97. _____ you speak Spanish?",
+                options: ["Do", "Does", "Did"],
+                correct: 0
+            },
+            {
+                question: "98. She _____ to the office every day.",
+                options: ["go", "goes", "going"],
+                correct: 1
+            },
+            {
+                question: "99. I _____ already finished the project.",
+                options: ["have", "has", "had"],
+                correct: 0
+            },
+            {
+                question: "100. They _____ playing chess right now.",
+                options: ["are", "is", "am"],
+                correct: 0
             }
         ]
     },
@@ -354,406 +630,6 @@ const quizzes = [
                 question: "20. I'd sooner _____ alone than with him.",
                 options: ["to stay", "stay", "staying"],
                 correct: 1
-            },
-            {
-                question: "21. The company whose shares _____ sharply last week has recovered.",
-                options: ["fell", "fallen", "had fell"],
-                correct: 0
-            },
-            {
-                question: "22. Supposing you _____ the lottery, what would you do?",
-                options: ["win", "won", "had won"],
-                correct: 1
-            },
-            {
-                question: "23. He is the sort of person to _____ I cannot entrust my secrets.",
-                options: ["who", "whom", "which"],
-                correct: 1
-            },
-            {
-                question: "24. The storm prevented us _____ the summit.",
-                options: ["to reach", "from reaching", "of reaching"],
-                correct: 1
-            },
-            {
-                question: "25. Not only _____ late, but he also forgot the documents.",
-                options: ["was he", "he was", "did he be"],
-                correct: 0
-            },
-            {
-                question: "26. I wish I _____ that comment about her family.",
-                options: ["never made", "had never made", "would never make"],
-                correct: 1
-            },
-            {
-                question: "27. The painting _____ to be a masterpiece is actually a forgery.",
-                options: ["thought", "thinking", "being thought"],
-                correct: 0
-            },
-            {
-                question: "28. His knowledge of the subject _____ far beyond his years.",
-                options: ["are", "is", "were"],
-                correct: 1
-            },
-            {
-                question: "29. She left the party early, _____ to feel unwell.",
-                options: ["claiming", "and claimed", "she claimed"],
-                correct: 0
-            },
-            {
-                question: "30. Little _____ that the project would take so long.",
-                options: ["we realized", "did we realize", "we did realize"],
-                correct: 1
-            },
-            {
-                question: "31. The idea deserves _____.",
-                options: ["to explore", "exploring", "being explored"],
-                correct: 1
-            },
-            {
-                question: "32. I'm not accustomed to _____ treated in such a manner.",
-                options: ["be", "being", "have been"],
-                correct: 1
-            },
-            {
-                question: "33. The committee's decision, after hours of debate, _____ finally announced.",
-                options: ["were", "was", "have been"],
-                correct: 1
-            },
-            {
-                question: "34. The more you practice, _____ you will make mistakes.",
-                options: ["the fewer", "less", "the less"],
-                correct: 0
-            },
-            {
-                question: "35. He denied _____ at the scene of the crime.",
-                options: ["to have been", "having been", "to be"],
-                correct: 1
-            },
-            {
-                question: "36. Only after the police arrived _____ what had happened.",
-                options: ["we understood", "did we understand", "understood we"],
-                correct: 1
-            },
-            {
-                question: "37. This is the room _____ the president used to work.",
-                options: ["which", "where", "in that"],
-                correct: 1
-            },
-            {
-                question: "38. She regretted _____ him the truth, as it caused a rift.",
-                options: ["to tell", "telling", "tell"],
-                correct: 1
-            },
-            {
-                question: "39. The data, much of which _____ unreliable, was discarded.",
-                options: ["were", "was", "being"],
-                correct: 0
-            },
-            {
-                question: "40. _____ our best player injured, we lost the match.",
-                options: ["With", "Having", "Because"],
-                correct: 0
-            },
-            {
-                question: "41. I'd rather you _____ smoke in here.",
-                options: ["don't", "didn't", "won't"],
-                correct: 1
-            },
-            {
-                question: "42. He was so tired that he lay down and _____ asleep instantly.",
-                options: ["felt", "fell", "fall"],
-                correct: 1
-            },
-            {
-                question: "43. The proposal is worth _____ seriously.",
-                options: ["to consider", "considering", "of considering"],
-                correct: 1
-            },
-            {
-                question: "44. Scarcely _____ the car when the warning light came on.",
-                options: ["I had started", "had I started", "did I start"],
-                correct: 1
-            },
-            {
-                question: "45. There is no point in _____ angry about it now.",
-                options: ["get", "getting", "to get"],
-                correct: 1
-            },
-            {
-                question: "46. She seems _____ everything.",
-                options: ["to know", "knowing", "know"],
-                correct: 0
-            },
-            {
-                question: "47. The job would require _____ long hours.",
-                options: ["to work", "working", "work"],
-                correct: 1
-            },
-            {
-                question: "48. If he _____ the money, he would have bought the house.",
-                options: ["had had", "had", "would have"],
-                correct: 0
-            },
-            {
-                question: "49. Under no circumstances _____ the alarm without permission.",
-                options: ["you should trigger", "should you trigger", "you trigger"],
-                correct: 1
-            },
-            {
-                question: "50. The whole issue needs _____ differently.",
-                options: ["handling", "to handle", "being handled"],
-                correct: 0
-            },
-            {
-                question: "51. He was caught _____ a false statement.",
-                options: ["to make", "making", "make"],
-                correct: 1
-            },
-            {
-                question: "52. The idea of _____ a party appealed to everyone.",
-                options: ["having", "have", "had"],
-                correct: 0
-            },
-            {
-                question: "53. You are required _____ your identity before entry.",
-                options: ["to show", "showing", "show"],
-                correct: 0
-            },
-            {
-                question: "54. The suspect admitted _____ the crime.",
-                options: ["to commit", "committing", "commit"],
-                correct: 1
-            },
-            {
-                question: "55. The longer she waited, the _____ she became.",
-                options: ["more anxious", "most anxious", "anxious"],
-                correct: 0
-            },
-            {
-                question: "56. I would have finished on time but I _____ interrupted.",
-                options: ["kept", "was kept", "kept being"],
-                correct: 1
-            },
-            {
-                question: "57. The house, the roof _____ was damaged, needs repairs.",
-                options: ["of which", "which", "whose"],
-                correct: 0
-            },
-            {
-                question: "58. He is not as smart as _____.",
-                options: ["I", "me", "myself"],
-                correct: 1
-            },
-            {
-                question: "59. The police are looking for a man _____ tall and blond.",
-                options: ["who is", "is", "he is"],
-                correct: 0
-            },
-            {
-                question: "60. _____ in the rain, I caught a cold.",
-                options: ["Walked", "Walking", "Having walked"],
-                correct: 2
-            },
-            {
-                question: "61. The decision will affect each and every one of _____.",
-                options: ["we", "us", "ours"],
-                correct: 1
-            },
-            {
-                question: "62. They failed _____ the deadline.",
-                options: ["meeting", "to meet", "meet"],
-                correct: 1
-            },
-            {
-                question: "63. I recall _____ him at the conference last spring.",
-                options: ["to see", "see", "seeing"],
-                correct: 2
-            },
-            {
-                question: "64. The more complex the problem, _____ the challenge.",
-                options: ["greater", "the greater", "more great"],
-                correct: 1
-            },
-            {
-                question: "65. She could not help _____ at his absurd excuse.",
-                options: ["laugh", "laughing", "to laugh"],
-                correct: 1
-            },
-            {
-                question: "66. The refugees, most of _____ have no shelter, are in urgent need.",
-                options: ["whom", "who", "which"],
-                correct: 0
-            },
-            {
-                question: "67. Not a single word _____ since the argument began.",
-                options: ["she said", "did she say", "she has said"],
-                correct: 1
-            },
-            {
-                question: "68. The chances of _____ the match are slim.",
-                options: ["us winning", "our winning", "we winning"],
-                correct: 1
-            },
-            {
-                question: "69. He avoided _____ me in the eye.",
-                options: ["to look", "looking", "look"],
-                correct: 1
-            },
-            {
-                question: "70. I would sooner _____ than admit defeat.",
-                options: ["die", "to die", "dying"],
-                correct: 0
-            },
-            {
-                question: "71. The painting is believed _____ by a famous artist.",
-                options: ["to be painted", "to have been painted", "being painted"],
-                correct: 1
-            },
-            {
-                question: "72. Had the weather been better, we _____ camping.",
-                options: ["would go", "would have gone", "went"],
-                correct: 1
-            },
-            {
-                question: "73. I'm considering _____ a new career.",
-                options: ["to start", "starting", "start"],
-                correct: 1
-            },
-            {
-                question: "74. The problem is _____ to ignore.",
-                options: ["too significant", "so significant", "significant enough"],
-                correct: 0
-            },
-            {
-                question: "75. On no account _____ the security code to anyone.",
-                options: ["you should give", "should you give", "you give"],
-                correct: 1
-            },
-            {
-                question: "76. She is not used to _____ in such noisy conditions.",
-                options: ["work", "working", "have worked"],
-                correct: 1
-            },
-            {
-                question: "77. The proposal deserves _____ attention.",
-                options: ["our", "us", "we"],
-                correct: 0
-            },
-            {
-                question: "78. Try _____ the button again; it might work.",
-                options: ["press", "pressing", "to press"],
-                correct: 1
-            },
-            {
-                question: "79. I remember _____ the door before leaving.",
-                options: ["locking", "to lock", "lock"],
-                correct: 0
-            },
-            {
-                question: "80. I regret _____ you that your application has been rejected.",
-                options: ["to inform", "informing", "inform"],
-                correct: 1
-            },
-            {
-                question: "81. He went on _____ for hours after the meeting.",
-                options: ["talking", "to talk", "talk"],
-                correct: 0
-            },
-            {
-                question: "82. They stopped _____ coffee at the station.",
-                options: ["having", "to have", "have"],
-                correct: 1
-            },
-            {
-                question: "83. Please stop _____ so much noise.",
-                options: ["to make", "making", "make"],
-                correct: 1
-            },
-            {
-                question: "84. I tried _____ to the manager, but he was unavailable.",
-                options: ["speaking", "to speak", "speak"],
-                correct: 1
-            },
-            {
-                question: "85. She meant _____ you, but she forgot.",
-                options: ["calling", "to call", "call"],
-                correct: 1
-            },
-            {
-                question: "86. If only I _____ the courage to tell her.",
-                options: ["had had", "had", "would have"],
-                correct: 0
-            },
-            {
-                question: "87. The data _____ collected, but the analysis is pending.",
-                options: ["have been", "has been", "is been"],
-                correct: 1
-            },
-            {
-                question: "88. Each of the participants _____ given a certificate.",
-                options: ["were", "was", "have been"],
-                correct: 1
-            },
-            {
-                question: "89. The team, including the substitutes, _____ celebrating the victory.",
-                options: ["was", "were", "have"],
-                correct: 0
-            },
-            {
-                question: "90. Mathematics _____ always been my weakest subject.",
-                options: ["have", "has", "are"],
-                correct: 1
-            },
-            {
-                question: "91. The faculty _____ divided on the issue of online exams.",
-                options: ["is", "are", "has"],
-                correct: 1
-            },
-            {
-                question: "92. Not only the students but also the dean _____ agreed to the proposal.",
-                options: ["have", "has", "are"],
-                correct: 1
-            },
-            {
-                question: "93. A number of issues _____ yet to be resolved.",
-                options: ["is", "are", "has"],
-                correct: 1
-            },
-            {
-                question: "94. The majority of the population _____ in favor of the reform.",
-                options: ["is", "are", "were"],
-                correct: 1
-            },
-            {
-                question: "95. The pair of shoes _____ too expensive.",
-                options: ["are", "is", "were"],
-                correct: 1
-            },
-            {
-                question: "96. Every one of the copies _____ a misprint.",
-                options: ["have", "has", "are"],
-                correct: 1
-            },
-            {
-                question: "97. Neither the manager nor his employees _____ satisfied.",
-                options: ["is", "are", "am"],
-                correct: 1
-            },
-            {
-                question: "98. The singer, along with her musicians, _____ rehearsing.",
-                options: ["is", "are", "have"],
-                correct: 0
-            },
-            {
-                question: "99. Fifty dollars _____ too much to pay for that.",
-                options: ["are", "is", "were"],
-                correct: 1
-            },
-            {
-                question: "100. The committee _____ issued their final report.",
-                options: ["has", "have", "is"],
-                correct: 0
             }
         ]
     }
