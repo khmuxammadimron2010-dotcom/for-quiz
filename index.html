@@ -13,14 +13,21 @@
             <p>Test Your Knowledge with Multiple Choice Questions</p>
         </header>
 
+        <!-- Quiz Level Selection Toolbar -->
+        <div id="levelToolbar" class="level-toolbar">
+            <button id="easyBtn" class="level-btn active" onclick="showLevelQuizzes('easy')">📚 Easy Quizzes</button>
+            <button id="difficultBtn" class="level-btn" onclick="showLevelQuizzes('difficult')">🔥 Difficult Quizzes</button>
+        </div>
+
         <!-- Quiz Selection Screen -->
         <div id="quizSelection" class="screen">
-            <h2>Select a Quiz</h2>
-            <div class="quiz-grid">
+            <h2 id="levelTitle">Select an Easy Quiz</h2>
+            <div class="quiz-grid" id="quizGrid">
                 <button class="quiz-btn" onclick="startQuiz(0)">General Knowledge</button>
                 <button class="quiz-btn" onclick="startQuiz(1)">Science</button>
                 <button class="quiz-btn" onclick="startQuiz(2)">History</button>
                 <button class="quiz-btn" onclick="startQuiz(3)">Geography</button>
+                <button class="quiz-btn" onclick="startQuiz(4)">English Grammar</button>
             </div>
         </div>
 
