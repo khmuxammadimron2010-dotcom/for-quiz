@@ -1,3 +1,22 @@
+// Typewriter Animation for Author Name
+function typewriterEffect(elementId, text, speed = 100) {
+    const element = document.getElementById(elementId);
+    let index = 0;
+
+    // Clear the element
+    element.textContent = '';
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        }
+    }
+
+    type();
+}
+
 // Quiz Data - Organized by Easy and Difficult levels
 const quizzes = [
     // EASY QUIZZES
@@ -942,4 +961,6 @@ function goBack() {
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {
     showLevelQuizzes('easy');
+    // Start typewriter animation for author name
+    typewriterEffect('authorName', 'Хакимов Мухаммадимрон', 80);
 });
