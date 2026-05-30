@@ -114,188 +114,996 @@
           },
           "correctAnswer": "b",
           "explanation": "Use 'is' with 'it'. For present continuous with 'it', use 'is' + verb-ing."
-        }
-      ]
-    },
-    {
-      "level": "A2",
-      "name": "Elementary Level",
-      "totalQuestions": 100,
-      "questions": [
+        },
         {
-          "id": 1,
-          "question": "I _____ to the cinema yesterday.",
+          "id": 11,
+          "question": "_____ you like coffee?",
+          "options": {
+            "a": "Does",
+            "b": "Do",
+            "c": "Is"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'Do' for questions with 'you'. In simple present questions, use 'Do' for you/we/they."
+        },
+        {
+          "id": 12,
+          "question": "_____ she speak English?",
+          "options": {
+            "a": "Does",
+            "b": "Do",
+            "c": "Is"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'Does' for questions with 'she'. In simple present questions, use 'Does' for he/she/it."
+        },
+        {
+          "id": 13,
+          "question": "_____ they live in London?",
+          "options": {
+            "a": "Does",
+            "b": "Do",
+            "c": "Is"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'Do' for questions with 'they'. In simple present questions, use 'Do' for plural subjects."
+        },
+        {
+          "id": 14,
+          "question": "_____ he play the guitar?",
+          "options": {
+            "a": "Does",
+            "b": "Do",
+            "c": "Is"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'Does' for questions with 'he'. In simple present questions, use 'Does' for he/she/it."
+        },
+        {
+          "id": 15,
+          "question": "_____ we need a ticket?",
+          "options": {
+            "a": "Does",
+            "b": "Do",
+            "c": "Is"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'Do' for questions with 'we'. In simple present questions, use 'Do' for we."
+        },
+        {
+          "id": 16,
+          "question": "I _____ like spicy food.",
+          "options": {
+            "a": "don't",
+            "b": "doesn't",
+            "c": "isn't"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'don't' with 'I'. For negatives with I/you/we/they, use 'don't'."
+        },
+        {
+          "id": 17,
+          "question": "She _____ eat meat.",
+          "options": {
+            "a": "don't",
+            "b": "doesn't",
+            "c": "isn't"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'doesn't' with 'she'. For negatives with he/she/it, use 'doesn't'."
+        },
+        {
+          "id": 18,
+          "question": "They _____ watch TV every day.",
+          "options": {
+            "a": "don't",
+            "b": "doesn't",
+            "c": "isn't"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'don't' with 'they'. For negatives with plural subjects, use 'don't'."
+        },
+        {
+          "id": 19,
+          "question": "He _____ work on Sundays.",
+          "options": {
+            "a": "don't",
+            "b": "doesn't",
+            "c": "isn't"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'doesn't' with 'he'. For negatives with he/she/it, use 'doesn't'."
+        },
+        {
+          "id": 20,
+          "question": "We _____ have a car.",
+          "options": {
+            "a": "don't",
+            "b": "doesn't",
+            "c": "isn't"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'don't' with 'we'. For negatives with we, use 'don't'."
+        },
+        {
+          "id": 21,
+          "question": "I _____ to school yesterday.",
           "options": {
             "a": "go",
             "b": "went",
-            "c": "have gone"
+            "c": "gone"
           },
           "correctAnswer": "b",
-          "explanation": "Use past simple 'went' with 'yesterday'. 'Yesterday' indicates a completed action in the past."
+          "explanation": "Use past simple 'went'. 'Yesterday' indicates a completed action in the past."
         },
         {
-          "id": 2,
-          "question": "She _____ breakfast an hour ago.",
-          "options": {
-            "a": "has",
-            "b": "had",
-            "c": "have"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use past simple 'had' with 'an hour ago'. Past simple is used for completed actions at a specific time."
-        },
-        {
-          "id": 3,
-          "question": "They _____ a new car last month.",
+          "id": 22,
+          "question": "She _____ a new dress last week.",
           "options": {
             "a": "buy",
             "b": "bought",
-            "c": "have bought"
+            "c": "buys"
           },
           "correctAnswer": "b",
-          "explanation": "Use past simple 'bought' with 'last month'. This indicates a completed action."
+          "explanation": "Use past simple 'bought'. 'Last week' shows a completed action in the past."
         },
         {
-          "id": 4,
-          "question": "He _____ his arm while playing football.",
+          "id": 23,
+          "question": "They _____ to the park on Saturday.",
           "options": {
-            "a": "break",
-            "b": "broke",
-            "c": "broken"
+            "a": "walk",
+            "b": "walked",
+            "c": "walks"
           },
           "correctAnswer": "b",
-          "explanation": "Use past simple 'broke'. This is an irregular verb in past tense."
+          "explanation": "Use past simple 'walked'. 'On Saturday' refers to a specific past time."
         },
         {
-          "id": 5,
-          "question": "We _____ a great time at the party last night.",
+          "id": 24,
+          "question": "He _____ his homework an hour ago.",
           "options": {
-            "a": "have",
-            "b": "had",
-            "c": "has"
+            "a": "finish",
+            "b": "finished",
+            "c": "finishes"
           },
           "correctAnswer": "b",
-          "explanation": "Use past simple 'had' with 'last night'. 'Had' agrees with the plural subject 'we'."
-        }
-      ]
-    },
-    {
-      "level": "B1",
-      "name": "Intermediate Level",
-      "totalQuestions": 100,
-      "questions": [
-        {
-          "id": 1,
-          "question": "If I _____ you, I would say sorry.",
-          "options": {
-            "a": "was",
-            "b": "were",
-            "c": "am"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use 'were' in conditional sentences. The subjunctive 'were' is used after 'if' for all subjects in hypothetical situations."
+          "explanation": "Use past simple 'finished'. 'An hour ago' indicates a completed past action."
         },
         {
-          "id": 2,
-          "question": "She _____ to the party if she had known about it.",
+          "id": 25,
+          "question": "We _____ a movie last night.",
           "options": {
-            "a": "would come",
-            "b": "would have come",
-            "c": "came"
+            "a": "watch",
+            "b": "watched",
+            "c": "watches"
           },
           "correctAnswer": "b",
-          "explanation": "Use 'would have come' for past conditional. This expresses a hypothetical situation in the past."
+          "explanation": "Use past simple 'watched'. 'Last night' indicates a specific time in the past."
         },
         {
-          "id": 3,
-          "question": "By the time we arrived, the train _____ already _____.",
+          "id": 26,
+          "question": "I will _____ you tomorrow.",
           "options": {
-            "a": "has / left",
-            "b": "had / left",
-            "c": "did / leave"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use past perfect 'had left'. This shows that the train left before we arrived."
-        }
-      ]
-    },
-    {
-      "level": "B2",
-      "name": "Upper Intermediate Level",
-      "totalQuestions": 100,
-      "questions": [
-        {
-          "id": 1,
-          "question": "Had I known about the traffic, I _____ a different route.",
-          "options": {
-            "a": "would take",
-            "b": "would have taken",
-            "c": "took"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use 'would have taken' for third conditional. This expresses a hypothetical past situation."
-        },
-        {
-          "id": 2,
-          "question": "It is imperative that he _____ the meeting immediately.",
-          "options": {
-            "a": "attends",
-            "b": "attend",
-            "c": "will attend"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use subjunctive 'attend'. After expressions like 'it is imperative', use the base form."
-        },
-        {
-          "id": 3,
-          "question": "Not until the final whistle blew _____ the stadium.",
-          "options": {
-            "a": "did the fans leave",
-            "b": "the fans left",
-            "c": "had the fans left"
+            "a": "call",
+            "b": "called",
+            "c": "calling"
           },
           "correctAnswer": "a",
-          "explanation": "Use inverted word order 'did the fans leave'. After 'not until', inversion is required."
-        }
-      ]
-    },
-    {
-      "level": "C1",
-      "name": "Advanced Level",
-      "totalQuestions": 100,
-      "questions": [
+          "explanation": "Use base verb 'call' after 'will'. The future simple is formed with 'will' + base verb."
+        },
         {
-          "id": 1,
-          "question": "Were the government to renege on its commitments, the repercussions _____ catastrophic.",
+          "id": 27,
+          "question": "She _____ visit us next week.",
           "options": {
-            "a": "would be",
-            "b": "will be",
+            "a": "will",
+            "b": "is",
             "c": "are"
           },
           "correctAnswer": "a",
-          "explanation": "Use 'would be' in conditional clauses. This is the subjunctive form for hypothetical situations."
+          "explanation": "Use 'will' for future. 'Next week' indicates future time."
         },
         {
-          "id": 2,
-          "question": "It is vitally important that each candidate _____ their identification upon arrival.",
+          "id": 28,
+          "question": "They _____ arrive at 5 PM.",
           "options": {
-            "a": "presents",
-            "b": "present",
-            "c": "will present"
-          },
-          "correctAnswer": "b",
-          "explanation": "Use subjunctive 'present'. After 'it is important', use the base form of the verb."
-        },
-        {
-          "id": 3,
-          "question": "Not until the final episode aired _____ the true identity of the killer.",
-          "options": {
-            "a": "did viewers discover",
-            "b": "viewers discovered",
-            "c": "had viewers discovered"
+            "a": "will",
+            "b": "is",
+            "c": "am"
           },
           "correctAnswer": "a",
-          "explanation": "Use inverted word order 'did viewers discover'. Inversion is required after 'not until'."
+          "explanation": "Use 'will' for future. 'Will' is used for future predictions or plans."
+        },
+        {
+          "id": 29,
+          "question": "He _____ be a doctor one day.",
+          "options": {
+            "a": "will",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'will' for future. This expresses a future aspiration or plan."
+        },
+        {
+          "id": 30,
+          "question": "We _____ travel to Spain next summer.",
+          "options": {
+            "a": "will",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'will' for future plans. 'Next summer' indicates future time."
+        },
+        {
+          "id": 31,
+          "question": "I _____ to the store now.",
+          "options": {
+            "a": "go",
+            "b": "am going",
+            "c": "goes"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'am going' for present action happening now. Present continuous expresses actions in progress."
+        },
+        {
+          "id": 32,
+          "question": "She _____ for a test at the moment.",
+          "options": {
+            "a": "study",
+            "b": "is studying",
+            "c": "studies"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is studying' for action in progress. 'At the moment' indicates present continuous."
+        },
+        {
+          "id": 33,
+          "question": "They _____ soccer right now.",
+          "options": {
+            "a": "play",
+            "b": "are playing",
+            "c": "plays"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'are playing' for action happening now. Present continuous describes current activities."
+        },
+        {
+          "id": 34,
+          "question": "He _____ a shower at the moment.",
+          "options": {
+            "a": "take",
+            "b": "is taking",
+            "c": "takes"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is taking' for action in progress. Present continuous is used for ongoing actions."
+        },
+        {
+          "id": 35,
+          "question": "We _____ lunch now.",
+          "options": {
+            "a": "have",
+            "b": "are having",
+            "c": "has"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'are having' for action happening now. Present continuous describes current activities."
+        },
+        {
+          "id": 36,
+          "question": "This is _____ apple.",
+          "options": {
+            "a": "a",
+            "b": "an",
+            "c": "the"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'a' before words starting with a consonant sound. 'Apple' starts with a vowel sound, so 'an' is correct."
+        },
+        {
+          "id": 37,
+          "question": "I have _____ car.",
+          "options": {
+            "a": "a",
+            "b": "an",
+            "c": "the"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'a' before words starting with a consonant sound. 'Car' starts with 'c'."
+        },
+        {
+          "id": 38,
+          "question": "She wants _____ orange.",
+          "options": {
+            "a": "a",
+            "b": "an",
+            "c": "the"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'an' before words starting with a vowel sound. 'Orange' starts with 'o'."
+        },
+        {
+          "id": 39,
+          "question": "He is _____ best student in class.",
+          "options": {
+            "a": "a",
+            "b": "an",
+            "c": "the"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'the' for superlatives. 'The best' is a superlative form."
+        },
+        {
+          "id": 40,
+          "question": "_____ sun is shining brightly.",
+          "options": {
+            "a": "A",
+            "b": "An",
+            "c": "The"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'The' for unique things. The sun is unique in our solar system."
+        },
+        {
+          "id": 41,
+          "question": "The book is _____ the table.",
+          "options": {
+            "a": "in",
+            "b": "on",
+            "c": "at"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'on' for surfaces. The book is on top of the table."
+        },
+        {
+          "id": 42,
+          "question": "She lives _____ New York.",
+          "options": {
+            "a": "in",
+            "b": "on",
+            "c": "at"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'in' for cities. New York is a city."
+        },
+        {
+          "id": 43,
+          "question": "He arrived _____ 6 PM.",
+          "options": {
+            "a": "in",
+            "b": "on",
+            "c": "at"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'at' for specific times. 6 PM is a specific time."
+        },
+        {
+          "id": 44,
+          "question": "I wake up _____ 7 AM.",
+          "options": {
+            "a": "in",
+            "b": "on",
+            "c": "at"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'at' for specific times. 7 AM is a specific time."
+        },
+        {
+          "id": 45,
+          "question": "They are _____ the park.",
+          "options": {
+            "a": "in",
+            "b": "on",
+            "c": "at"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'in' for enclosed spaces. The park is an enclosed area."
+        },
+        {
+          "id": 46,
+          "question": "My brother is _____ than me.",
+          "options": {
+            "a": "tall",
+            "b": "taller",
+            "c": "tallest"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use comparative 'taller' to compare two people. 'Taller' is used for comparisons."
+        },
+        {
+          "id": 47,
+          "question": "This test is _____ than the last one.",
+          "options": {
+            "a": "easy",
+            "b": "easier",
+            "c": "easiest"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use comparative 'easier' to compare two things. For one-syllable adjectives ending in 'e', add 'r'."
+        },
+        {
+          "id": 48,
+          "question": "She runs _____ than him.",
+          "options": {
+            "a": "fast",
+            "b": "faster",
+            "c": "fastest"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use comparative 'faster' to compare two people. 'Faster' is the comparative form."
+        },
+        {
+          "id": 49,
+          "question": "Today is _____ than yesterday.",
+          "options": {
+            "a": "cold",
+            "b": "colder",
+            "c": "coldest"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use comparative 'colder' to compare two days. 'Colder' is the comparative form."
+        },
+        {
+          "id": 50,
+          "question": "This book is _____ than that one.",
+          "options": {
+            "a": "good",
+            "b": "better",
+            "c": "best"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use comparative 'better'. 'Good' has an irregular comparative form 'better'."
+        },
+        {
+          "id": 51,
+          "question": "This is _____ day of my life.",
+          "options": {
+            "a": "happy",
+            "b": "happier",
+            "c": "the happiest"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use superlative 'the happiest'. Superlatives describe the extreme quality."
+        },
+        {
+          "id": 52,
+          "question": "Mount Everest is _____ mountain in the world.",
+          "options": {
+            "a": "high",
+            "b": "higher",
+            "c": "the highest"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use superlative 'the highest'. This describes the extreme height."
+        },
+        {
+          "id": 53,
+          "question": "She is _____ person I know.",
+          "options": {
+            "a": "kind",
+            "b": "kinder",
+            "c": "the kindest"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use superlative 'the kindest'. This describes the highest degree of kindness."
+        },
+        {
+          "id": 54,
+          "question": "This is _____ movie ever.",
+          "options": {
+            "a": "bad",
+            "b": "worse",
+            "c": "the worst"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use superlative 'the worst'. 'Bad' has an irregular superlative form 'the worst'."
+        },
+        {
+          "id": 55,
+          "question": "He is _____ student in class.",
+          "options": {
+            "a": "smart",
+            "b": "smarter",
+            "c": "the smartest"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use superlative 'the smartest'. This describes the highest degree of intelligence."
+        },
+        {
+          "id": 56,
+          "question": "I can _____ swimming.",
+          "options": {
+            "a": "go",
+            "b": "to go",
+            "c": "going"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'go' after 'can'. Modal verbs are followed by base verbs."
+        },
+        {
+          "id": 57,
+          "question": "She can _____ French.",
+          "options": {
+            "a": "speak",
+            "b": "to speak",
+            "c": "speaking"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'speak' after 'can'. Modals are followed by base verbs."
+        },
+        {
+          "id": 58,
+          "question": "They can _____ the guitar.",
+          "options": {
+            "a": "play",
+            "b": "to play",
+            "c": "playing"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'play' after 'can'. Modal verbs take base form verbs."
+        },
+        {
+          "id": 59,
+          "question": "He cannot _____ a car.",
+          "options": {
+            "a": "drive",
+            "b": "to drive",
+            "c": "driving"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'drive' after 'cannot'. Modals require base verbs."
+        },
+        {
+          "id": 60,
+          "question": "We can _____ you.",
+          "options": {
+            "a": "help",
+            "b": "to help",
+            "c": "helping"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'help' after 'can'. Modal verbs are always followed by base verbs."
+        },
+        {
+          "id": 61,
+          "question": "There _____ one cat in the garden.",
+          "options": {
+            "a": "is",
+            "b": "are",
+            "c": "am"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'is' for singular nouns. 'One cat' is singular."
+        },
+        {
+          "id": 62,
+          "question": "There _____ three chairs in the room.",
+          "options": {
+            "a": "is",
+            "b": "are",
+            "c": "am"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'are' for plural nouns. 'Three chairs' is plural."
+        },
+        {
+          "id": 63,
+          "question": "There _____ water in the bottle.",
+          "options": {
+            "a": "is",
+            "b": "are",
+            "c": "am"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'is' for uncountable nouns. 'Water' is uncountable."
+        },
+        {
+          "id": 64,
+          "question": "There _____ many people at the party.",
+          "options": {
+            "a": "is",
+            "b": "are",
+            "c": "am"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'are' for plural nouns. 'Many people' is plural."
+        },
+        {
+          "id": 65,
+          "question": "There _____ a pen on the desk.",
+          "options": {
+            "a": "is",
+            "b": "are",
+            "c": "am"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'is' for singular nouns. 'A pen' is singular."
+        },
+        {
+          "id": 66,
+          "question": "I have _____ friends in this city.",
+          "options": {
+            "a": "some",
+            "b": "any",
+            "c": "no"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'some' in positive statements. 'Some' is used for positive sentences."
+        },
+        {
+          "id": 67,
+          "question": "Do you have _____ questions?",
+          "options": {
+            "a": "some",
+            "b": "any",
+            "c": "no"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'any' in questions. 'Any' is typically used in questions."
+        },
+        {
+          "id": 68,
+          "question": "She doesn't have _____ money.",
+          "options": {
+            "a": "some",
+            "b": "any",
+            "c": "no"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'any' in negative statements. 'Any' is used in negatives."
+        },
+        {
+          "id": 69,
+          "question": "Would you like _____ coffee?",
+          "options": {
+            "a": "some",
+            "b": "any",
+            "c": "no"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'some' in polite requests. 'Some' is used when making polite offers."
+        },
+        {
+          "id": 70,
+          "question": "There aren't _____ apples left.",
+          "options": {
+            "a": "some",
+            "b": "any",
+            "c": "no"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'any' in negative statements. This is a negative sentence."
+        },
+        {
+          "id": 71,
+          "question": "This is _____ pen.",
+          "options": {
+            "a": "my",
+            "b": "mine",
+            "c": "me"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use possessive adjective 'my' before nouns. 'My' modifies the noun 'pen'."
+        },
+        {
+          "id": 72,
+          "question": "That book is _____.",
+          "options": {
+            "a": "your",
+            "b": "yours",
+            "c": "you"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use possessive pronoun 'yours' when no noun follows. 'Yours' stands alone."
+        },
+        {
+          "id": 73,
+          "question": "She is _____ sister.",
+          "options": {
+            "a": "her",
+            "b": "hers",
+            "c": "she"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use possessive adjective 'her' before nouns. 'Her' modifies the noun 'sister'."
+        },
+        {
+          "id": 74,
+          "question": "This house is _____.",
+          "options": {
+            "a": "our",
+            "b": "ours",
+            "c": "us"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use possessive pronoun 'ours' when no noun follows. 'Ours' stands alone."
+        },
+        {
+          "id": 75,
+          "question": "Is this coat _____?",
+          "options": {
+            "a": "your",
+            "b": "yours",
+            "c": "you"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use possessive pronoun 'yours' when no noun follows. 'Yours' stands alone."
+        },
+        {
+          "id": 76,
+          "question": "I _____ to music every morning.",
+          "options": {
+            "a": "listen",
+            "b": "listens",
+            "c": "listening"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'listen' with 'I'. For simple present, use base verb with I/you/we/they."
+        },
+        {
+          "id": 77,
+          "question": "She _____ breakfast at 8 AM.",
+          "options": {
+            "a": "have",
+            "b": "has",
+            "c": "having"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'has' with 'she'. For simple present, use 'has' with he/she/it."
+        },
+        {
+          "id": 78,
+          "question": "They _____ TV in the evening.",
+          "options": {
+            "a": "watch",
+            "b": "watches",
+            "c": "watching"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'watch' with 'they'. For simple present, use base verb with plural subjects."
+        },
+        {
+          "id": 79,
+          "question": "He _____ to work by bus.",
+          "options": {
+            "a": "go",
+            "b": "goes",
+            "c": "going"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'goes' with 'he'. For simple present, add 's' to he/she/it."
+        },
+        {
+          "id": 80,
+          "question": "We _____ in a small house.",
+          "options": {
+            "a": "live",
+            "b": "lives",
+            "c": "living"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'live' with 'we'. For simple present, use base verb with we."
+        },
+        {
+          "id": 81,
+          "question": "_____ name is John.",
+          "options": {
+            "a": "He",
+            "b": "His",
+            "c": "Him"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use possessive 'His' before nouns. 'His' shows possession."
+        },
+        {
+          "id": 82,
+          "question": "_____ is my mother.",
+          "options": {
+            "a": "She",
+            "b": "Her",
+            "c": "Hers"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use subject pronoun 'She'. This is the subject of the sentence."
+        },
+        {
+          "id": 83,
+          "question": "I like _____ very much.",
+          "options": {
+            "a": "they",
+            "b": "them",
+            "c": "their"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use object pronoun 'them'. This is the object of the verb 'like'."
+        },
+        {
+          "id": 84,
+          "question": "Please give the book to _____.",
+          "options": {
+            "a": "I",
+            "b": "me",
+            "c": "my"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use object pronoun 'me'. This is the object of the preposition 'to'."
+        },
+        {
+          "id": 85,
+          "question": "_____ are going to the park.",
+          "options": {
+            "a": "We",
+            "b": "Us",
+            "c": "Our"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use subject pronoun 'We'. This is the subject of the sentence."
+        },
+        {
+          "id": 86,
+          "question": "Let's go to the cinema, _____?",
+          "options": {
+            "a": "will we",
+            "b": "shall we",
+            "c": "do we"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'shall we' for suggestions. 'Shall we' is used for tag questions with 'let's'."
+        },
+        {
+          "id": 87,
+          "question": "This is your car, _____?",
+          "options": {
+            "a": "isn't it",
+            "b": "is it",
+            "c": "doesn't it"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'isn't it' for negative tag questions. When the statement is positive, the tag is negative."
+        },
+        {
+          "id": 88,
+          "question": "She can swim, _____?",
+          "options": {
+            "a": "can she",
+            "b": "can't she",
+            "c": "does she"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'can't she' for negative tag questions. When the statement is positive, the tag is negative."
+        },
+        {
+          "id": 89,
+          "question": "You like coffee, _____?",
+          "options": {
+            "a": "do you",
+            "b": "don't you",
+            "c": "are you"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'don't you' for negative tag questions. When positive, tag is negative."
+        },
+        {
+          "id": 90,
+          "question": "He is a doctor, _____?",
+          "options": {
+            "a": "is he",
+            "b": "isn't he",
+            "c": "does he"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'isn't he' for negative tag questions. When the statement is positive, the tag is negative."
+        },
+        {
+          "id": 91,
+          "question": "Please be quiet. _____ talk.",
+          "options": {
+            "a": "Don't",
+            "b": "Doesn't",
+            "c": "Not"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'Don't' for negative imperative. Imperatives use the base verb with 'don't'."
+        },
+        {
+          "id": 92,
+          "question": "_____ me your phone number.",
+          "options": {
+            "a": "Give",
+            "b": "To give",
+            "c": "Giving"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'Give' for imperative. Imperatives use the base form."
+        },
+        {
+          "id": 93,
+          "question": "Let's _____ a walk.",
+          "options": {
+            "a": "take",
+            "b": "to take",
+            "c": "taking"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'take' after 'let's'. 'Let's' is followed by the base verb."
+        },
+        {
+          "id": 94,
+          "question": "_____ the door, please.",
+          "options": {
+            "a": "Close",
+            "b": "To close",
+            "c": "Closing"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'Close' for imperative. Imperatives use the base form."
+        },
+        {
+          "id": 95,
+          "question": "_____ careful! It's dangerous.",
+          "options": {
+            "a": "Be",
+            "b": "To be",
+            "c": "Being"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use base verb 'Be' for imperative. Imperatives use the base form."
+        },
+        {
+          "id": 96,
+          "question": "I _____ breakfast at 7 AM.",
+          "options": {
+            "a": "have",
+            "b": "had",
+            "c": "having"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use simple present 'have'. This is a habitual action."
+        },
+        {
+          "id": 97,
+          "question": "She _____ her grandmother yesterday.",
+          "options": {
+            "a": "visit",
+            "b": "visited",
+            "c": "visits"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'visited'. 'Yesterday' indicates past time."
+        },
+        {
+          "id": 98,
+          "question": "They _____ a new house in 2020.",
+          "options": {
+            "a": "buy",
+            "b": "bought",
+            "c": "buys"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'bought'. '2020' indicates a specific past year."
+        },
+        {
+          "id": 99,
+          "question": "He _____ to music on the way to work.",
+          "options": {
+            "a": "listen",
+            "b": "listened",
+            "c": "listens"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'listened'. This is a past habitual action."
+        },
+        {
+          "id": 100,
+          "question": "We _____ dinner at 8 PM.",
+          "options": {
+            "a": "eat",
+            "b": "ate",
+            "c": "eating"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use simple present 'eat'. This is a habitual daily action."
         }
       ]
     }
