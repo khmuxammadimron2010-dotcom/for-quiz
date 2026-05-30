@@ -1,0 +1,303 @@
+{
+  "quizzes": [
+    {
+      "level": "A1",
+      "name": "Beginner Level",
+      "totalQuestions": 100,
+      "questions": [
+        {
+          "id": 1,
+          "question": "I _____ a student.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'am' with 'I'. The verb 'to be' takes 'am' for first person singular."
+        },
+        {
+          "id": 2,
+          "question": "You _____ my friend.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'are' with 'you'. The verb 'to be' takes 'are' for second person singular and plural."
+        },
+        {
+          "id": 3,
+          "question": "She _____ a teacher.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is' with 'she'. The verb 'to be' takes 'is' for third person singular."
+        },
+        {
+          "id": 4,
+          "question": "We _____ happy.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'are' with 'we'. The verb 'to be' takes 'are' for first person plural."
+        },
+        {
+          "id": 5,
+          "question": "They _____ at home.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'are' with 'they'. The verb 'to be' takes 'are' for third person plural."
+        },
+        {
+          "id": 6,
+          "question": "He _____ playing football.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is' with 'he'. For present continuous, use 'is' + verb-ing with he/she/it."
+        },
+        {
+          "id": 7,
+          "question": "I _____ reading a book.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'am' with 'I'. For present continuous, use 'am' + verb-ing with I."
+        },
+        {
+          "id": 8,
+          "question": "The cat _____ sleeping.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is' with 'the cat' (singular noun). For present continuous, use 'is' + verb-ing."
+        },
+        {
+          "id": 9,
+          "question": "My parents _____ working.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "c",
+          "explanation": "Use 'are' with 'my parents' (plural noun). For present continuous, use 'are' + verb-ing."
+        },
+        {
+          "id": 10,
+          "question": "It _____ raining outside.",
+          "options": {
+            "a": "am",
+            "b": "is",
+            "c": "are"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'is' with 'it'. For present continuous with 'it', use 'is' + verb-ing."
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "name": "Elementary Level",
+      "totalQuestions": 100,
+      "questions": [
+        {
+          "id": 1,
+          "question": "I _____ to the cinema yesterday.",
+          "options": {
+            "a": "go",
+            "b": "went",
+            "c": "have gone"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'went' with 'yesterday'. 'Yesterday' indicates a completed action in the past."
+        },
+        {
+          "id": 2,
+          "question": "She _____ breakfast an hour ago.",
+          "options": {
+            "a": "has",
+            "b": "had",
+            "c": "have"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'had' with 'an hour ago'. Past simple is used for completed actions at a specific time."
+        },
+        {
+          "id": 3,
+          "question": "They _____ a new car last month.",
+          "options": {
+            "a": "buy",
+            "b": "bought",
+            "c": "have bought"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'bought' with 'last month'. This indicates a completed action."
+        },
+        {
+          "id": 4,
+          "question": "He _____ his arm while playing football.",
+          "options": {
+            "a": "break",
+            "b": "broke",
+            "c": "broken"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'broke'. This is an irregular verb in past tense."
+        },
+        {
+          "id": 5,
+          "question": "We _____ a great time at the party last night.",
+          "options": {
+            "a": "have",
+            "b": "had",
+            "c": "has"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past simple 'had' with 'last night'. 'Had' agrees with the plural subject 'we'."
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "name": "Intermediate Level",
+      "totalQuestions": 100,
+      "questions": [
+        {
+          "id": 1,
+          "question": "If I _____ you, I would say sorry.",
+          "options": {
+            "a": "was",
+            "b": "were",
+            "c": "am"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'were' in conditional sentences. The subjunctive 'were' is used after 'if' for all subjects in hypothetical situations."
+        },
+        {
+          "id": 2,
+          "question": "She _____ to the party if she had known about it.",
+          "options": {
+            "a": "would come",
+            "b": "would have come",
+            "c": "came"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'would have come' for past conditional. This expresses a hypothetical situation in the past."
+        },
+        {
+          "id": 3,
+          "question": "By the time we arrived, the train _____ already _____.",
+          "options": {
+            "a": "has / left",
+            "b": "had / left",
+            "c": "did / leave"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use past perfect 'had left'. This shows that the train left before we arrived."
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "name": "Upper Intermediate Level",
+      "totalQuestions": 100,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Had I known about the traffic, I _____ a different route.",
+          "options": {
+            "a": "would take",
+            "b": "would have taken",
+            "c": "took"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use 'would have taken' for third conditional. This expresses a hypothetical past situation."
+        },
+        {
+          "id": 2,
+          "question": "It is imperative that he _____ the meeting immediately.",
+          "options": {
+            "a": "attends",
+            "b": "attend",
+            "c": "will attend"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use subjunctive 'attend'. After expressions like 'it is imperative', use the base form."
+        },
+        {
+          "id": 3,
+          "question": "Not until the final whistle blew _____ the stadium.",
+          "options": {
+            "a": "did the fans leave",
+            "b": "the fans left",
+            "c": "had the fans left"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use inverted word order 'did the fans leave'. After 'not until', inversion is required."
+        }
+      ]
+    },
+    {
+      "level": "C1",
+      "name": "Advanced Level",
+      "totalQuestions": 100,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Were the government to renege on its commitments, the repercussions _____ catastrophic.",
+          "options": {
+            "a": "would be",
+            "b": "will be",
+            "c": "are"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use 'would be' in conditional clauses. This is the subjunctive form for hypothetical situations."
+        },
+        {
+          "id": 2,
+          "question": "It is vitally important that each candidate _____ their identification upon arrival.",
+          "options": {
+            "a": "presents",
+            "b": "present",
+            "c": "will present"
+          },
+          "correctAnswer": "b",
+          "explanation": "Use subjunctive 'present'. After 'it is important', use the base form of the verb."
+        },
+        {
+          "id": 3,
+          "question": "Not until the final episode aired _____ the true identity of the killer.",
+          "options": {
+            "a": "did viewers discover",
+            "b": "viewers discovered",
+            "c": "had viewers discovered"
+          },
+          "correctAnswer": "a",
+          "explanation": "Use inverted word order 'did viewers discover'. Inversion is required after 'not until'."
+        }
+      ]
+    }
+  ]
+}
