@@ -17,6 +17,7 @@
         <div id="levelToolbar" class="level-toolbar">
             <button id="easyBtn" class="level-btn active" onclick="showLevelQuizzes('easy')">📚 Easy Quizzes</button>
             <button id="difficultBtn" class="level-btn" onclick="showLevelQuizzes('difficult')">🔥 Difficult Quizzes</button>
+            <button id="leaderboardBtn" class="level-btn" onclick="showLeaderboard()">🏆 Leaderboard</button>
         </div>
 
         <!-- Quiz Selection Screen -->
@@ -66,14 +67,40 @@
                     <p id="scoreMessage"></p>
                 </div>
                 <div id="resultsDetails" class="results-details"></div>
+                
+                <!-- Name Input for Leaderboard -->
+                <div class="name-input-section">
+                    <label for="playerName">Enter your name to save your score:</label>
+                    <input type="text" id="playerName" placeholder="Your name..." maxlength="50">
+                    <button class="btn btn-primary" onclick="saveScoreToDatabase()">Save Score</button>
+                </div>
+
                 <div class="button-group">
                     <button class="btn btn-primary" onclick="restartQuiz()">Try Another Quiz</button>
                     <button class="btn btn-secondary" onclick="goBack()">Back to Menu</button>
                 </div>
             </div>
         </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="screen hidden">
+            <div class="leaderboard-container">
+                <h2>🏆 Leaderboard</h2>
+                <div class="leaderboard-filters">
+                    <button class="filter-btn active" onclick="showLeaderboardAll()">All Scores</button>
+                    <button class="filter-btn" onclick="showLeaderboardByQuiz()">By Quiz</button>
+                </div>
+                <div id="leaderboardContent" class="leaderboard-content">
+                    <div class="loading">Loading scores...</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goBack()">Back to Menu</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="js/database.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
