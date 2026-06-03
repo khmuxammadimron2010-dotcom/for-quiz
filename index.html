@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <button class="theme-btn theme-default active" onclick="setTheme('default')" title="Default Purple" style="display:none;"></button>
+        <button class="theme-btn theme-default" onclick="setTheme('default')" title="Default Purple">🟣</button>
+        <button class="theme-btn theme-maroon-btn" onclick="setTheme('maroon')" title="Maroon">🔴</button>
+        <button class="theme-btn theme-navy-btn" onclick="setTheme('navy')" title="Navy">🔵</button>
+        <button class="theme-btn theme-forest-btn" onclick="setTheme('forest')" title="Forest">🟢</button>
+        <button class="theme-btn theme-charcoal-btn" onclick="setTheme('charcoal')" title="Charcoal">⚫</button>
+        <button class="theme-btn theme-plum-btn" onclick="setTheme('plum')" title="Plum">🟣</button>
+        <button class="theme-btn theme-teal-btn" onclick="setTheme('teal')" title="Teal">🔷</button>
+    </div>
+
     <div class="container">
         <header>
             <h1>🎓 Quiz Master</h1>
@@ -102,5 +114,46 @@
 
     <script src="js/database.js"></script>
     <script src="script.js"></script>
+    <script>
+        function setTheme(theme) {
+            const root = document.documentElement;
+            root.classList.remove('theme-maroon', 'theme-navy', 'theme-forest', 'theme-charcoal', 'theme-plum', 'theme-teal');
+            
+            if (theme !== 'default') {
+                root.classList.add(`theme-${theme}`);
+            }
+            
+            // Update active button
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Save theme preference
+            localStorage.setItem('quizTheme', theme);
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('quizTheme') || 'default';
+            setTheme(savedTheme);
+            
+            // Set active button
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            if (savedTheme === 'default') {
+                document.querySelectorAll('.theme-btn')[1].classList.add('active');
+            } else {
+                const themeMap = {
+                    'maroon': 1,
+                    'navy': 2,
+                    'forest': 3,
+                    'charcoal': 4,
+                    'plum': 5,
+                    'teal': 6
+                };
+                if (themeMap[savedTheme]) {
+                    document.querySelectorAll('.theme-btn')[themeMap[savedTheme] + 1].classList.add('active');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
