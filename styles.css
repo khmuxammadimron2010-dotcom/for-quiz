@@ -397,6 +397,10 @@ header h1,
 /* Leaderboard Screen */
 .leaderboard-container {
     text-align: center;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(99, 102, 241, 0.1);
 }
 
 .leaderboard-container h2 {
@@ -436,13 +440,14 @@ header h1,
 }
 
 .leaderboard-content {
-    background: var(--neutral-light);
+    background: white;
     padding: 25px;
     border-radius: var(--border-radius);
     margin-bottom: 25px;
     text-align: left;
     max-height: 600px;
     overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .loading,
@@ -520,6 +525,10 @@ header h1,
     margin-bottom: 15px;
     text-align: left;
     font-size: 1.2em;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Responsive */
@@ -569,5 +578,17 @@ header h1,
 
     .quiz-leaderboard h3 {
         font-size: 1em;
+    }
+
+    .leaderboard-container {
+        padding: 20px;
+    }
+
+    .leaderboard-filters {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
     }
 }
