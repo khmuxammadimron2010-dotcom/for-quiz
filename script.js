@@ -648,6 +648,7 @@ let filteredQuizzes = [];
 const quizSelectionScreen = document.getElementById('quizSelection');
 const quizScreen = document.getElementById('quizScreen');
 const resultsScreen = document.getElementById('resultsScreen');
+const leaderboardScreen = document.getElementById('leaderboardScreen');
 const questionElement = document.getElementById('question');
 const optionsContainer = document.getElementById('optionsContainer');
 const nextBtn = document.getElementById('nextBtn');
@@ -658,6 +659,8 @@ const levelTitle = document.getElementById('levelTitle');
 const quizGrid = document.getElementById('quizGrid');
 const easyBtn = document.getElementById('easyBtn');
 const difficultBtn = document.getElementById('difficultBtn');
+const leaderboardBtn = document.getElementById('leaderboardBtn');
+const playerNameInput = document.getElementById('playerName');
 
 // Functions
 function showLevelQuizzes(level) {
@@ -684,6 +687,12 @@ function showLevelQuizzes(level) {
         button.onclick = () => startQuiz(quizzes.indexOf(quiz));
         quizGrid.appendChild(button);
     });
+
+    // Show quiz selection screen
+    quizSelectionScreen.classList.remove('hidden');
+    quizScreen.classList.add('hidden');
+    resultsScreen.classList.add('hidden');
+    leaderboardScreen.classList.add('hidden');
 }
 
 function startQuiz(quizIndex) {
@@ -773,12 +782,16 @@ function showQuizScreen() {
     quizSelectionScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     resultsScreen.classList.add('hidden');
+    leaderboardScreen.classList.add('hidden');
 }
 
 function showResultsScreen() {
     quizScreen.classList.add('hidden');
     resultsScreen.classList.remove('hidden');
+    leaderboardScreen.classList.add('hidden');
     displayResults();
+    playerNameInput.value = ''; // Clear the name input
+    playerNameInput.focus(); // Focus on the name input
 }
 
 function displayResults() {
@@ -822,10 +835,138 @@ function displayResults() {
     });
 }
 
+// Database Functions
+async function saveScoreToDatabase() {
+    const name = playerNameInput.value.trim();
+    
+    if (!name) {
+        alert('Please enter your name');
+        return;
+    }
+
+    if (name.length < 2) {
+        alert('Name must be at least 2 characters long');
+        return;
+    }
+
+    try {
+        const quiz = quizzes[currentQuizIndex];
+        await quizDB.saveScore(name, score, quiz.questions.length, quiz.title);
+        alert(`✅ Score saved! ${name} - ${score}/${quiz.questions.length}`);
+        // Clear the input after saving
+        playerNameInput.value = '';
+    } catch (error) {
+        console.error('Error saving score:', error);
+        alert('Error saving score. Please try again.');
+    }
+}
+
+function showLeaderboard() {
+    quizSelectionScreen.classList.add('hidden');
+    quizScreen.classList.add('hidden');
+    resultsScreen.classList.add('hidden');
+    leaderboardScreen.classList.remove('hidden');
+    showLeaderboardAll();
+}
+
+async function showLeaderboardAll() {
+    const leaderboardContent = document.getElementById('leaderboardContent');
+    
+    try {
+        const scores = await quizDB.getTopScores(20);
+        
+        if (scores.length === 0) {
+            leaderboardContent.innerHTML = '<p class="no-data">No scores yet. Be the first to take a quiz!</p>';
+            return;
+        }
+
+        let html = '<table class="leaderboard-table"><thead><tr><th>Rank</th><th>Name</th><th>Quiz</th><th>Score</th><th>Percentage</th><th>Date</th></tr></thead><tbody>';
+        
+        scores.forEach((score, index) => {
+            const date = new Date(score.date).toLocaleDateString();
+            html += `
+                <tr>
+                    <td class="rank">${index + 1}</td>
+                    <td class="name">${score.name}</td>
+                    <td class="quiz">${score.quizTitle}</td>
+                    <td class="score">${score.score}/${score.totalQuestions}</td>
+                    <td class="percentage">${score.percentage.toFixed(1)}%</td>
+                    <td class="date">${date}</td>
+                </tr>
+            `;
+        });
+
+        html += '</tbody></table>';
+        leaderboardContent.innerHTML = html;
+    } catch (error) {
+        console.error('Error loading leaderboard:', error);
+        leaderboardContent.innerHTML = '<p class="error">Error loading leaderboard. Please try again.</p>';
+    }
+}
+
+async function showLeaderboardByQuiz() {
+    const leaderboardContent = document.getElementById('leaderboardContent');
+    
+    try {
+        const allScores = await quizDB.getAllScores();
+        
+        if (allScores.length === 0) {
+            leaderboardContent.innerHTML = '<p class="no-data">No scores yet. Be the first to take a quiz!</p>';
+            return;
+        }
+
+        // Group by quiz
+        const quizzes = {};
+        allScores.forEach(score => {
+            if (!quizzes[score.quizTitle]) {
+                quizzes[score.quizTitle] = [];
+            }
+            quizzes[score.quizTitle].push(score);
+        });
+
+        // Sort each quiz's scores
+        Object.keys(quizzes).forEach(quiz => {
+            quizzes[quiz].sort((a, b) => {
+                if (b.score !== a.score) {
+                    return b.score - a.score;
+                }
+                return new Date(b.date) - new Date(a.date);
+            });
+        });
+
+        let html = '';
+        Object.keys(quizzes).forEach(quizTitle => {
+            html += `<div class="quiz-leaderboard"><h3>${quizTitle}</h3>`;
+            html += '<table class="leaderboard-table"><thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Percentage</th><th>Date</th></tr></thead><tbody>';
+            
+            quizzes[quizTitle].slice(0, 5).forEach((score, index) => {
+                const date = new Date(score.date).toLocaleDateString();
+                html += `
+                    <tr>
+                        <td class="rank">${index + 1}</td>
+                        <td class="name">${score.name}</td>
+                        <td class="score">${score.score}/${score.totalQuestions}</td>
+                        <td class="percentage">${score.percentage.toFixed(1)}%</td>
+                        <td class="date">${date}</td>
+                    </tr>
+                `;
+            });
+
+            html += '</tbody></table></div>';
+        });
+
+        leaderboardContent.innerHTML = html;
+    } catch (error) {
+        console.error('Error loading leaderboard:', error);
+        leaderboardContent.innerHTML = '<p class="error">Error loading leaderboard. Please try again.</p>';
+    }
+}
+
 function restartQuiz() {
     quizSelectionScreen.classList.remove('hidden');
     quizScreen.classList.add('hidden');
     resultsScreen.classList.add('hidden');
+    leaderboardScreen.classList.add('hidden');
     quizStarted = false;
     showLevelQuizzes(currentLevel);
 }
@@ -837,6 +978,4 @@ function goBack() {
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {
     showLevelQuizzes('easy');
-    // Start typewriter animation for author name
-    typewriterEffect('authorName', 'Хакимов Мухаммадимрон', 80);
 });
