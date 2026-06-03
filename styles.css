@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
@@ -43,11 +43,25 @@ header h1 {
     font-size: 2.5em;
     color: var(--neutral-dark);
     margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
 }
 
 header p {
     color: #6b7280;
     font-size: 1.1em;
+}
+
+/* iOS Emoji Styling */
+.level-btn,
+.quiz-btn,
+.btn,
+header h1,
+#levelTitle,
+.leaderboard-container h2,
+.results-container h2,
+#scoreMessage,
+.filter-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif !important;
 }
 
 /* Level Toolbar */
@@ -480,6 +494,7 @@ header p {
 .leaderboard-table td.rank {
     font-weight: 700;
     color: var(--primary-color);
+    font-size: 1.2em;
 }
 
 .leaderboard-table td.name {
