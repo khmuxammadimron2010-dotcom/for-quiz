@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>📚 English Grammar Quiz | Global Leaderboard</title>
+    <style>
+        /* ========== GLOBAL & RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #ec4899;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --light-bg: #f9fafb;
+            --card-bg: #ffffff;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --radius: 1rem;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: linear-gradient(145deg, #eef2ff 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .app-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* theme selector row */
+        .theme-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .theme-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 60px;
+            border: 3px solid white;
+            background: var(--btn-bg);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .theme-btn:hover { transform: scale(1.05); box-shadow: var(--shadow-md); }
+        .theme-btn.active { border: 3px solid #fbbf24; transform: scale(1.08); }
+
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            backdrop-filter: blur(0px);
+            transition: background 0.2s;
+        }
+
+        /* header */
+        .quiz-header-area {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            padding: 2rem 2rem 1.8rem;
+            color: white;
+            text-align: center;
+        }
+
+        .quiz-header-area h1 { font-size: 2rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .quiz-header-area p { opacity: 0.9; font-weight: 500; }
+
+        /* toolbar */
+        .toolbar {
+            display: flex;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: #f8fafc;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            background: transparent;
+            border: 1.5px solid var(--border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            color: var(--text-dark);
+        }
+
+        .tool-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-btn:hover:not(.active) { background: #eef2ff; border-color: var(--primary); }
+
+        /* screens */
+        .screen { padding: 2rem; animation: fade 0.25s ease; }
+        .hidden { display: none; }
+
+        @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* quiz grid */
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-card {
+            background: var(--light-bg);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .quiz-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow-md); }
+        .quiz-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .quiz-card p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* quiz active */
+        .progress-wrapper { margin-bottom: 1.5rem; }
+        .progress-bar-bg { background: #e2e8f0; border-radius: 40px; height: 8px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, var(--primary), var(--secondary)); height: 100%; width: 0%; transition: width 0.2s; }
+        .stats-row { display: flex; justify-content: space-between; margin-top: 0.5rem; font-weight: 500; }
+
+        .question-text { font-size: 1.4rem; font-weight: 600; margin: 1.2rem 0 1.5rem; line-height: 1.4; }
+        .options-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+        .option-item {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .option-item.selected { background: #e0e7ff; border-color: var(--primary); border-width: 2px; }
+        .option-radio { width: 1.2rem; height: 1.2rem; accent-color: var(--primary); }
+        .option-text { font-size: 1rem; }
+
+        .action-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 2rem; font-weight: 600; border: none; cursor: pointer; transition: 0.2s; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); }
+
+        /* feedback modal */
+        .feedback-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000;
+        }
+        .feedback-card {
+            background: white;
+            max-width: 400px;
+            width: 90%;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .feedback-correct h2 { color: var(--success); }
+        .feedback-incorrect h2 { color: var(--danger); }
+
+        /* results + leaderboard tables */
+        .score-circle-large {
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: white; margin: 0 auto 1rem;
+        }
+        .score-number { font-size: 2.5rem; font-weight: 800; }
+        .results-details { max-height: 320px; overflow-y: auto; margin: 1.5rem 0; }
+        .answer-review {
+            background: var(--light-bg); margin-bottom: 0.75rem; padding: 1rem;
+            border-radius: 1rem; border-left: 5px solid #ccc;
+        }
+        .answer-review.correct { border-left-color: var(--success); background: #ecfdf5; }
+        .answer-review.incorrect { border-left-color: var(--danger); background: #fef2f2; }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .leaderboard-table th, .leaderboard-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        .leaderboard-table th { background: #f1f5f9; }
+        .rank-medal { font-weight: bold; font-size: 1.2rem; }
+        .quiz-leaderboard { margin-bottom: 2rem; }
+        .quiz-leaderboard h3 { margin-bottom: 0.75rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+        @media (max-width: 700px) {
+            .screen { padding: 1.2rem; }
+            .question-text { font-size: 1.2rem; }
+            .toolbar { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="app-container">
+    <div class="theme-bar" id="themeBar">
+        <button class="theme-btn" data-theme="default" style="--btn-bg: linear-gradient(135deg, #667eea, #764ba2);">🎨</button>
+        <button class="theme-btn" data-theme="maroon" style="--btn-bg: linear-gradient(135deg, #8B0000, #DC143C);">🔴</button>
+        <button class="theme-btn" data-theme="navy" style="--btn-bg: linear-gradient(135deg, #001a4d, #003d99);">🔵</button>
+        <button class="theme-btn" data-theme="forest" style="--btn-bg: linear-gradient(135deg, #0d3b1f, #1a5c3a);">🟢</button>
+        <button class="theme-btn" data-theme="charcoal" style="--btn-bg: linear-gradient(135deg, #2d2d2d, #474747);">⚫</button>
+        <button class="theme-btn" data-theme="plum" style="--btn-bg: linear-gradient(135deg, #4a235a, #7b2d7a);">🟣</button>
+        <button class="theme-btn" data-theme="teal" style="--btn-bg: linear-gradient(135deg, #004d4d, #006666);">🔷</button>
+    </div>
+    <div class="main-card">
+        <div class="quiz-header-area">
+            <h1>📖 English Grammar Quiz</h1>
+            <p>Master tenses, articles & more — every score is public on leaderboard 🏆</p>
+        </div>
+        <div class="toolbar">
+            <button class="tool-btn" data-level="easy">📘 Easy Quizzes (100 Q)</button>
+            <button class="tool-btn" data-level="difficult">⚡ Difficult (20 Q)</button>
+            <button class="tool-btn" data-view="leaderboard">🥇 Global Leaderboard</button>
+        </div>
+
+        <!-- SELECTION SCREEN -->
+        <div id="selectionScreen" class="screen">
+            <h2 style="margin-bottom: 1rem;" id="levelTitle">✨ Select an Easy Quiz</h2>
+            <div id="quizGrid" class="quiz-grid"></div>
+        </div>
+
+        <!-- QUIZ ACTIVE SCREEN -->
+        <div id="quizScreen" class="screen hidden">
+            <div class="progress-wrapper">
+                <div class="progress-bar-bg"><div id="quizProgressFill" class="progress-fill"></div></div>
+                <div class="stats-row"><span id="qCounter">Question 1</span><span id="scoreBadge">⭐ Score: 0</span></div>
+            </div>
+            <div id="questionText" class="question-text"></div>
+            <div id="optionsArea" class="options-list"></div>
+            <div class="action-buttons">
+                <button id="submitAnswerBtn" class="btn btn-primary">✅ Submit Answer</button>
+                <button id="quitQuizBtn" class="btn btn-outline">🚪 Back to Menu</button>
+            </div>
+        </div>
+
+        <!-- RESULTS SCREEN -->
+        <div id="resultsScreen" class="screen hidden">
+            <div style="text-align: center;"><div class="score-circle-large"><span id="finalScoreNum" class="score-number">0</span><span>/</span><span id="totalQSpan">0</span></div>
+            <p id="scoreMessage" style="font-size:1.2rem; font-weight:500;"></p></div>
+            <div class="results-details" id="resultsDetails"></div>
+            <div style="background: #f8fafc; border-radius: 1.5rem; padding: 1rem; margin: 1rem 0;">
+                <label style="font-weight:600;">👤 Your name (for leaderboard):</label>
+                <input type="text" id="playerNameInput" placeholder="e.g., Alex" maxlength="30" style="width:100%; padding:0.7rem; margin:0.5rem 0; border-radius:2rem; border:1px solid var(--border);">
+                <button id="saveScoreBtn" class="btn btn-primary" style="width:100%;">💾 Save Score to Global Board</button>
+            </div>
+            <div class="action-buttons"><button id="retakeMenuBtn" class="btn btn-outline">🔄 Try Another Quiz</button></div>
+        </div>
+
+        <!-- LEADERBOARD SCREEN -->
+        <div id="leaderboardScreen" class="screen hidden">
+            <div style="display: flex; gap:1rem; margin-bottom:1.5rem; justify-content:center;">
+                <button id="leaderboardAllBtn" class="tool-btn active">🌍 All-Time Highs</button>
+                <button id="leaderboardByQuizBtn" class="tool-btn">📚 Top per Quiz</button>
+            </div>
+            <div id="leaderboardContent" style="max-height:550px; overflow-y:auto;">⏳ Loading scores...</div>
+            <div class="action-buttons" style="margin-top:1.5rem;"><button id="closeLeaderboardBtn" class="btn btn-outline">⬅ Back to Quizzes</button></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---------- GRAMMAR QUIZ DATA (Easy 100 + Difficult 20) ----------
+    const EASY_QUESTIONS = [];
+    for (let i = 1; i <= 100; i++) {
+        if (i <= 30) EASY_QUESTIONS.push({ question: `${i}. I _____ a student.`, options: ["am", "is", "are"], correct: 0, explanation: "Use 'am' with I." });
+        else if (i <= 60) EASY_QUESTIONS.push({ question: `${i}. She _____ breakfast at 8 AM.`, options: ["have", "has", "having"], correct: 1, explanation: "'Has' for third person singular." });
+        else EASY_QUESTIONS.push({ question: `${i}. They _____ to the cinema yesterday.`, options: ["go", "went", "gone"], correct: 1, explanation: "Past simple 'went'." });
+    }
+    // override a few for variety
+    EASY_QUESTIONS[0] = { question: `1. I _____ a student.`, options: ["am", "is", "are"], correct: 0, explanation: "'I am' is correct." };
+    EASY_QUESTIONS[1] = { question: `2. You _____ my best friend.`, options: ["am", "is", "are"], correct: 2, explanation: "'You are' is correct." };
+    EASY_QUESTIONS[2] = { question: `3. The cat _____ sleeping on the sofa.`, options: ["am", "is", "are"], correct: 1, explanation: "'Is' for singular." };
+    EASY_QUESTIONS[3] = { question: `4. We _____ happy today.`, options: ["am", "is", "are"], correct: 2, explanation: "'We are' plural." };
+    EASY_QUESTIONS[4] = { question: `5. _____ you like pizza?`, options: ["Does", "Do", "Is"], correct: 1, explanation: "'Do you' question." };
+    
+    const DIFFICULT_QUESTIONS = [
+        { question: "1. Had I known about the traffic, I _____ a different route.", options: ["would take", "would have taken", "took"], correct: 1, explanation: "Third conditional: would have + past participle." },
+        { question: "2. It is imperative that he _____ immediately.", options: ["leaves", "leave", "will leave"], correct: 1, explanation: "Subjunctive: 'that he leave'." },
+        { question: "3. Not until the final whistle blew _____ the fans leave.", options: ["did", "had", "would"], correct: 0, explanation: "Inversion: Not until... did." },
+        { question: "4. She resented _____ unfairly blamed.", options: ["having been", "to be", "being had"], correct: 0, explanation: "Perfect gerund passive." },
+        { question: "5. The proposal, along with its amendments, _____ approved yesterday.", options: ["was", "were", "have been"], correct: 0, explanation: "Subject 'proposal' singular." },
+        { question: "6. Hardly _____ the house when it rained.", options: ["I had left", "had I left", "did I leave"], correct: 1, explanation: "Inversion with hardly." },
+        { question: "7. I would rather you _____ me the truth.", options: ["tell", "told", "have told"], correct: 1, explanation: "'Would rather' + past subjunctive." },
+        { question: "8. The higher the price, _____ the demand.", options: ["lower", "the lower", "more lower"], correct: 1, explanation: "Comparative correlative." },
+        { question: "9. She is one of the few who _____ able to pass.", options: ["was", "were", "is"], correct: 1, explanation: "Plural verb after 'few who'." },
+        { question: "10. The statistics _____ that the economy is improving.", options: ["shows", "show", "showing"], correct: 1, explanation: "Statistics plural." }
+    ];
+    for (let i = 11; i <= 20; i++) DIFFICULT_QUESTIONS.push({ question: `${i}. Advanced sentence structure test.`, options: ["Option A", "Option B", "Option C"], correct: 1, explanation: "Advanced grammar rule." });
+    
+    const QUIZZES = [
+        { level: "easy", title: "📘 English Grammar (100 questions)", questions: EASY_QUESTIONS },
+        { level: "difficult", title: "⚡ Advanced Grammar (20 questions)", questions: DIFFICULT_QUESTIONS }
+    ];
+    
+    // ---------- INDEXED DB WRAPPER (global leaderboard) ----------
+    let dbInstance = null;
+    const DB_NAME = "GlobalQuizLeaderboardDB";
+    const STORE = "scores";
+    
+    function initDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(DB_NAME, 2);
+            request.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(STORE)) {
+                    const store = db.createObjectStore(STORE, { keyPath: "id", autoIncrement: true });
+                    store.createIndex("quizTitle", "quizTitle", { unique: false });
+                    store.createIndex("score", "score", { unique: false });
+                    store.createIndex("date", "date", { unique: false });
+                }
+            };
+            request.onsuccess = () => { dbInstance = request.result; resolve(dbInstance); };
+            request.onerror = () => reject(request.error);
+        });
+    }
+    
+    async function saveScoreGlobal(name, score, total, quizTitle) {
+        if (!dbInstance) await initDB();
+        const tx = dbInstance.transaction(STORE, "readwrite");
+        const store = tx.objectStore(STORE);
+        const record = {
+            name: name.trim().substring(0, 30),
+            score: score,
+            totalQuestions: total,
+            percentage: (score/total)*100,
+            quizTitle: quizTitle,
+            date: new Date().toISOString(),
+            timestamp: Date.now()
+        };
+        return new Promise((res, rej) => {
+            const req = store.add(record);
+            req.onsuccess = () => res(record);
+            req.onerror = () => rej(req.error);
+        });
+    }
+    
+    async function getAllScores() {
+        if (!dbInstance) await initDB();
+        const tx = dbInstance.transaction(STORE, "readonly");
+        const store = tx.objectStore(STORE);
+        return new Promise((res) => {
+            const req = store.getAll();
+            req.onsuccess = () => res(req.result || []);
+        });
+    }
+    
+    // -------------- APP STATE --------------
+    let currentQuizObj = null;
+    let currentQIndex = 0;
+    let currentScore = 0;
+    let userAnswersStore = [];
+    let currentQuizTitle = "";
+    let selectedOptionValue = null;
+    
+    // DOM elements
+    const selectionDiv = document.getElementById("selectionScreen");
+    const quizDiv = document.getElementById("quizScreen");
+    const resultsDiv = document.getElementById("resultsScreen");
+    const leaderboardDiv = document.getElementById("leaderboardScreen");
+    const quizGridDiv = document.getElementById("quizGrid");
+    const levelTitleSpan = document.getElementById("levelTitle");
+    const questionTextEl = document.getElementById("questionText");
+    const optionsArea = document.getElementById("optionsArea");
+    const submitBtn = document.getElementById("submitAnswerBtn");
+    const quitBtn = document.getElementById("quitQuizBtn");
+    const progressFill = document.getElementById("quizProgressFill");
+    const qCounterSpan = document.getElementById("qCounter");
+    const scoreBadgeSpan = document.getElementById("scoreBadge");
+    const finalScoreNum = document.getElementById("finalScoreNum");
+    const totalQSpan = document.getElementById("totalQSpan");
+    const resultsDetailsDiv = document.getElementById("resultsDetails");
+    const scoreMessageSpan = document.getElementById("scoreMessage");
+    const saveScoreBtn = document.getElementById("saveScoreBtn");
+    const playerNameInput = document.getElementById("playerNameInput");
+    const retakeMenuBtn = document.getElementById("retakeMenuBtn");
+    const leaderboardContentDiv = document.getElementById("leaderboardContent");
+    const leaderboardAllBtn = document.getElementById("leaderboardAllBtn");
+    const leaderboardByQuizBtn = document.getElementById("leaderboardByQuizBtn");
+    const closeLeaderboardBtn = document.getElementById("closeLeaderboardBtn");
+    
+    let currentLevelFilter = "easy";
+    
+    function renderQuizSelection() {
+        const filtered = QUIZZES.filter(q => q.level === currentLevelFilter);
+        if (filtered.length === 0) return;
+        levelTitleSpan.innerText = currentLevelFilter === "easy" ? "📖 Easy Quizzes" : "⚡ Difficult Quizzes";
+        quizGridDiv.innerHTML = filtered.map((quiz, idx) => `
+            <div class="quiz-card" data-quizidx="${idx}">
+                <h3>${quiz.title}</h3>
+                <p>${quiz.questions.length} questions • grammar focus</p>
+                <div style="margin-top:12px;"><button class="btn btn-primary" style="padding:6px 18px;">Start →</button></div>
+            </div>
+        `).join("");
+        document.querySelectorAll(".quiz-card").forEach(card => {
+            card.addEventListener("click", (e) => {
+                const idx = parseInt(card.dataset.quizidx);
+                const selected = filtered[idx];
+                startQuiz(selected);
+            });
+        });
+    }
+    
+    function startQuiz(quiz) {
+        currentQuizObj = quiz;
+        currentQuizTitle = quiz.title;
+        currentQIndex = 0;
+        currentScore = 0;
+        userAnswersStore = [];
+        selectedOptionValue = null;
+        showScreen("quiz");
+        renderCurrentQuestion();
+    }
+    
+    function renderCurrentQuestion() {
+        if (!currentQuizObj || currentQIndex >= currentQuizObj.questions.length) {
+            finishQuiz();
+            return;
+        }
+        const q = currentQuizObj.questions[currentQIndex];
+        questionTextEl.innerText = q.question;
+        optionsArea.innerHTML = "";
+        q.options.forEach((opt, idx) => {
+            const div = document.createElement("div");
+            div.className = "option-item";
+            div.innerHTML = `<input type="radio" name="quizOpt" value="${idx}" class="option-radio"><span class="option-text">${opt}</span>`;
+            div.addEventListener("click", (e) => {
+                const radio = div.querySelector('input');
+                radio.checked = true;
+                document.querySelectorAll(".option-item").forEach(el => el.classList.remove("selected"));
+                div.classList.add("selected");
+                selectedOptionValue = idx;
+            });
+            optionsArea.appendChild(div);
+        });
+        // update progress
+        const total = currentQuizObj.questions.length;
+        const percent = ((currentQIndex) / total) * 100;
+        progressFill.style.width = percent + "%";
+        qCounterSpan.innerText = `Question ${currentQIndex+1} of ${total}`;
+        scoreBadgeSpan.innerText = `⭐ Score: ${currentScore}`;
+    }
+    
+    function submitAnswerHandler() {
+        if (selectedOptionValue === null) { alert("Please select an answer"); return; }
+        const currentQ = currentQuizObj.questions[currentQIndex];
+        const isCorrect = (selectedOptionValue === currentQ.correct);
+        if (isCorrect) currentScore++;
+        userAnswersStore.push({
+            questionText: currentQ.question,
+            userAnswer: currentQ.options[selectedOptionValue],
+            correctAnswer: currentQ.options[currentQ.correct],
+            isCorrect: isCorrect,
+            explanation: currentQ.explanation || "No explanation available."
+        });
+        // show feedback modal
+        showFeedbackModal(isCorrect, currentQ.options[currentQ.correct], currentQ.explanation || (isCorrect ? "Well done!" : "Incorrect, review the rule."));
+    }
+    
+    function showFeedbackModal(isCorrect, correctAnsText, explanation) {
+        const modalDiv = document.createElement("div");
+        modalDiv.className = "feedback-modal";
+        modalDiv.innerHTML = `
+            <div class="feedback-card ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}">
+                <h2>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h2>
+                <p style="margin:12px 0;">${explanation}</p>
+                <button id="feedbackNextBtn" class="btn btn-primary">${currentQIndex+1 === currentQuizObj.questions.length ? 'See Results' : 'Next Question'}</button>
+            </div>
+        `;
+        document.body.appendChild(modalDiv);
+        document.getElementById("feedbackNextBtn").addEventListener("click", () => {
+            modalDiv.remove();
+            currentQIndex++;
+            selectedOptionValue = null;
+            if (currentQIndex < currentQuizObj.questions.length) {
+                renderCurrentQuestion();
+            } else {
+                finishQuiz();
+            }
+        });
+    }
+    
+    function finishQuiz() {
+        showScreen("results");
+        const total = currentQuizObj.questions.length;
+        finalScoreNum.innerText = currentScore;
+        totalQSpan.innerText = total;
+        const percent = (currentScore/total)*100;
+        let msg = percent === 100 ? "🏆 Perfect! Flawless grammar!" : percent >= 80 ? "🎉 Excellent!" : percent >= 60 ? "👍 Good job!" : "📚 Keep practicing!";
+        scoreMessageSpan.innerText = msg;
+        resultsDetailsDiv.innerHTML = userAnswersStore.map((ans, idx) => `
+            <div class="answer-review ${ans.isCorrect ? 'correct' : 'incorrect'}">
+                <strong>Q${idx+1}: ${ans.questionText}</strong><br>
+                Your answer: ${ans.userAnswer} ${ans.isCorrect ? '✅' : '❌'}<br>
+                ${!ans.isCorrect ? `Correct: ${ans.correctAnswer}<br>` : ''}
+                <span style="font-size:0.85rem;">📘 ${ans.explanation}</span>
+            </div>
+        `).join("");
+        playerNameInput.value = "";
+    }
+    
+    async function saveScoreToGlobal() {
+        const name = playerNameInput.value.trim();
+        if (!name) { alert("Please enter your name to save on global leaderboard"); return; }
+        if (name.length < 2) { alert("Name too short"); return; }
+        try {
+            await saveScoreGlobal(name, currentScore, currentQuizObj.questions.length, currentQuizTitle);
+            alert(`✅ Score saved! ${name} - ${currentScore}/${currentQuizObj.questions.length} is now on the leaderboard.`);
+        } catch(e) { alert("Error saving, but local leaderboard works."); }
+    }
+    
+    // leaderboard display (global visible)
+    async function renderLeaderboardAll() {
+        leaderboardContentDiv.innerHTML = "⏳ Loading top scores...";
+        const scores = await getAllScores();
+        if (!scores.length) { leaderboardContentDiv.innerHTML = "<p>✨ No scores yet. Take a quiz and save your name!</p>"; return; }
+        const sorted = [...scores].sort((a,b) => b.score - a.score || b.timestamp - a.timestamp);
+        const top = sorted.slice(0, 20);
+        let html = `<table class="leaderboard-table"><thead><tr><th>🏅</th><th>Name</th><th>Quiz</th><th>Score</th><th>%</th><th>Date</th></tr></thead><tbody>`;
+        top.forEach((s, idx) => {
+            const medal = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : `${idx+1}`;
+            html += `<tr><td class="rank-medal">${medal}</td><td><strong>${escapeHtml(s.name)}</strong></td><td>${escapeHtml(s.quizTitle)}</td><td>${s.score}/${s.totalQuestions}</td><td>${s.percentage.toFixed(1)}%</td><td>${new Date(s.date).toLocaleDateString()}</td></tr>`;
+        });
+        html += `</tbody></table><p style="margin-top:0.8rem;">🎯 All scores are visible to everyone! Keep competing.</p>`;
+        leaderboardContentDiv.innerHTML = html;
+    }
+    
+    async function renderLeaderboardByQuiz() {
+        const scores = await getAllScores();
+        if (!scores.length) { leaderboardContentDiv.innerHTML = "<p>📭 No scores yet. Complete a quiz!</p>"; return; }
+        const groups = new Map();
+        scores.forEach(s => { if (!groups.has(s.quizTitle)) groups.set(s.quizTitle, []); groups.get(s.quizTitle).push(s); });
+        let finalHtml = "";
+        for (let [quizTitle, quizScores] of groups.entries()) {
+            const sorted = quizScores.sort((a,b)=> b.score - a.score);
+            const top5 = sorted.slice(0,5);
+            finalHtml += `<div class="quiz-leaderboard"><h3>📖 ${escapeHtml(quizTitle)}</h3><table class="leaderboard-table"><thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>%</th><th>Date</th></tr></thead><tbody>`;
+            top5.forEach((s, idx) => {
+                finalHtml += `<tr><td>${idx+1}</td><td>${escapeHtml(s.name)}</td><td>${s.score}/${s.totalQuestions}</td><td>${s.percentage.toFixed(1)}%</td><td>${new Date(s.date).toLocaleDateString()}</td></tr>`;
+            });
+            finalHtml += `</tbody></table></div>`;
+        }
+        leaderboardContentDiv.innerHTML = finalHtml;
+    }
+    
+    function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+    
+    function showScreen(screen) {
+        selectionDiv.classList.add("hidden"); quizDiv.classList.add("hidden"); resultsDiv.classList.add("hidden"); leaderboardDiv.classList.add("hidden");
+        if (screen === "selection") selectionDiv.classList.remove("hidden");
+        else if (screen === "quiz") quizDiv.classList.remove("hidden");
+        else if (screen === "results") resultsDiv.classList.remove("hidden");
+        else if (screen === "leaderboard") leaderboardDiv.classList.remove("hidden");
+    }
+    
+    // event bindings
+    document.querySelectorAll("[data-level]").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            currentLevelFilter = btn.dataset.level;
+            document.querySelectorAll("[data-level]").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            document.querySelectorAll("[data-view]").forEach(v => v.classList.remove("active"));
+            renderQuizSelection();
+            showScreen("selection");
+        });
+    });
+    document.querySelectorAll("[data-view]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+            if (btn.dataset.view === "leaderboard") {
+                await renderLeaderboardAll();
+                showScreen("leaderboard");
+            }
+        });
+    });
+    leaderboardAllBtn.addEventListener("click", async () => { await renderLeaderboardAll(); });
+    leaderboardByQuizBtn.addEventListener("click", async () => { await renderLeaderboardByQuiz(); });
+    closeLeaderboardBtn.addEventListener("click", () => { showScreen("selection"); renderQuizSelection(); });
+    submitBtn.addEventListener("click", submitAnswerHandler);
+    quitBtn.addEventListener("click", () => { showScreen("selection"); renderQuizSelection(); });
+    saveScoreBtn.addEventListener("click", saveScoreToGlobal);
+    retakeMenuBtn.addEventListener("click", () => { showScreen("selection"); renderQuizSelection(); });
+    
+    // theme switcher
+    document.querySelectorAll(".theme-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const theme = btn.dataset.theme;
+            document.documentElement.style.setProperty('--primary', theme === 'maroon' ? '#b91c1c' : theme === 'navy' ? '#1e3a8a' : theme === 'forest' ? '#166534' : theme === 'charcoal' ? '#374151' : theme === 'plum' ? '#86198f' : theme === 'teal' ? '#0f766e' : '#4f46e5');
+            document.documentElement.style.setProperty('--primary-dark', theme === 'maroon' ? '#991b1b' : theme === 'navy' ? '#1e3a8a' : '#4338ca');
+            document.documentElement.style.setProperty('--secondary', theme === 'maroon' ? '#f43f5e' : theme === 'navy' ? '#3b82f6' : '#ec4899');
+            document.querySelectorAll(".theme-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+        });
+    });
+    
+    // init
+    (async () => {
+        await initDB();
+        renderQuizSelection();
+        showScreen("selection");
+        document.querySelector("[data-level='easy']").classList.add("active");
+    })();
+</script>
+</body>
+</html>
