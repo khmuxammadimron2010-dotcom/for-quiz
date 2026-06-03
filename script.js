@@ -671,11 +671,11 @@ function showLevelQuizzes(level) {
     if (level === 'easy') {
         easyBtn.classList.add('active');
         difficultBtn.classList.remove('active');
-        levelTitle.textContent = 'Select an Easy Quiz';
+        levelTitle.textContent = 'Select an Easy Quiz 📖';
     } else {
         difficultBtn.classList.add('active');
         easyBtn.classList.remove('active');
-        levelTitle.textContent = 'Select a Difficult Quiz';
+        levelTitle.textContent = 'Select a Difficult Quiz ⚡';
     }
     
     // Update quiz grid buttons
@@ -714,7 +714,7 @@ function displayQuestion() {
 
     // Update question number and score
     questionNumber.textContent = `Question ${currentQuestionIndex + 1} of ${quiz.questions.length}`;
-    scoreDisplay.textContent = `Score: ${score}`;
+    scoreDisplay.textContent = `📊 Score: ${score}`;
 
     // Update progress bar
     const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
@@ -736,7 +736,7 @@ function displayQuestion() {
 
     // Reset next button
     nextBtn.disabled = true;
-    nextBtn.textContent = currentQuestionIndex === quiz.questions.length - 1 ? 'Submit Quiz' : 'Next Question';
+    nextBtn.textContent = currentQuestionIndex === quiz.questions.length - 1 ? '✓ Submit Quiz' : '➜ Next Question';
 }
 
 function selectOption(index) {
@@ -802,12 +802,12 @@ function displayResults() {
     // Display final score
     document.getElementById('finalScore').textContent = score;
 
-    // Display score message
+    // Display score message with iOS emojis
     let message = '';
     if (percentage === 100) {
-        message = '🎉 Perfect Score! Outstanding!';
+        message = '🎊 Perfect Score! Outstanding!';
     } else if (percentage >= 80) {
-        message = '🌟 Excellent work!';
+        message = '⭐ Excellent work!';
     } else if (percentage >= 60) {
         message = '👍 Good job!';
     } else if (percentage >= 40) {
@@ -825,7 +825,7 @@ function displayResults() {
         const resultItem = document.createElement('div');
         resultItem.className = `result-item ${answer.isCorrect ? 'correct' : 'incorrect'}`;
         resultItem.innerHTML = `
-            <div class="result-item-question">Q${index + 1}: ${answer.question}</div>
+            <div class="result-item-question">${answer.isCorrect ? '✓' : '✗'} Q${index + 1}: ${answer.question}</div>
             <div class="result-item-answer">
                 Your answer: <strong>${answer.userAnswer}</strong>
                 ${!answer.isCorrect ? `<br>Correct answer: <strong>${answer.correctAnswer}</strong>` : ''}
@@ -876,17 +876,18 @@ async function showLeaderboardAll() {
         const scores = await quizDB.getTopScores(20);
         
         if (scores.length === 0) {
-            leaderboardContent.innerHTML = '<p class="no-data">No scores yet. Be the first to take a quiz!</p>';
+            leaderboardContent.innerHTML = '<p class="no-data">🎯 No scores yet. Be the first to take a quiz!</p>';
             return;
         }
 
-        let html = '<table class="leaderboard-table"><thead><tr><th>Rank</th><th>Name</th><th>Quiz</th><th>Score</th><th>Percentage</th><th>Date</th></tr></thead><tbody>';
+        let html = '<table class="leaderboard-table"><thead><tr><th>🥇</th><th>👤 Name</th><th>📝 Quiz</th><th>⭐ Score</th><th>📊 %</th><th>📅 Date</th></tr></thead><tbody>';
         
         scores.forEach((score, index) => {
             const date = new Date(score.date).toLocaleDateString();
+            const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}`;
             html += `
                 <tr>
-                    <td class="rank">${index + 1}</td>
+                    <td class="rank">${medal}</td>
                     <td class="name">${score.name}</td>
                     <td class="quiz">${score.quizTitle}</td>
                     <td class="score">${score.score}/${score.totalQuestions}</td>
@@ -900,7 +901,7 @@ async function showLeaderboardAll() {
         leaderboardContent.innerHTML = html;
     } catch (error) {
         console.error('Error loading leaderboard:', error);
-        leaderboardContent.innerHTML = '<p class="error">Error loading leaderboard. Please try again.</p>';
+        leaderboardContent.innerHTML = '<p class="error">❌ Error loading leaderboard. Please try again.</p>';
     }
 }
 
@@ -911,7 +912,7 @@ async function showLeaderboardByQuiz() {
         const allScores = await quizDB.getAllScores();
         
         if (allScores.length === 0) {
-            leaderboardContent.innerHTML = '<p class="no-data">No scores yet. Be the first to take a quiz!</p>';
+            leaderboardContent.innerHTML = '<p class="no-data">🎯 No scores yet. Be the first to take a quiz!</p>';
             return;
         }
 
@@ -936,14 +937,15 @@ async function showLeaderboardByQuiz() {
 
         let html = '';
         Object.keys(quizzes).forEach(quizTitle => {
-            html += `<div class="quiz-leaderboard"><h3>${quizTitle}</h3>`;
-            html += '<table class="leaderboard-table"><thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Percentage</th><th>Date</th></tr></thead><tbody>';
+            html += `<div class="quiz-leaderboard"><h3>📖 ${quizTitle}</h3>`;
+            html += '<table class="leaderboard-table"><thead><tr><th>🥇</th><th>👤 Name</th><th>⭐ Score</th><th>📊 %</th><th>📅 Date</th></tr></thead><tbody>';
             
             quizzes[quizTitle].slice(0, 5).forEach((score, index) => {
                 const date = new Date(score.date).toLocaleDateString();
+                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}`;
                 html += `
                     <tr>
-                        <td class="rank">${index + 1}</td>
+                        <td class="rank">${medal}</td>
                         <td class="name">${score.name}</td>
                         <td class="score">${score.score}/${score.totalQuestions}</td>
                         <td class="percentage">${score.percentage.toFixed(1)}%</td>
@@ -958,7 +960,7 @@ async function showLeaderboardByQuiz() {
         leaderboardContent.innerHTML = html;
     } catch (error) {
         console.error('Error loading leaderboard:', error);
-        leaderboardContent.innerHTML = '<p class="error">Error loading leaderboard. Please try again.</p>';
+        leaderboardContent.innerHTML = '<p class="error">❌ Error loading leaderboard. Please try again.</p>';
     }
 }
 
